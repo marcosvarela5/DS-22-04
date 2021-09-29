@@ -4,41 +4,50 @@ public class StringCount {
 
     public static int countWords(String text){
 
+        int cont = 0;
+        if(text == null) return 0;
+        else if(text.isEmpty()) return 0;
+        else{
         String[] storage = text.split("\\s+"); // Cada vez que encuentre un espacio o una cadena de espacios seguidos
-        if (text.isEmpty()){
-            return 0;
-        }
-        else {
-            /* PARA PROBAR EL OUTPUT */ // int resultado = storage.length;
-            /* PARA PROBAR EL OUTPUT */ // System.out.println(resultado);
-            return storage.length;
+
+            //Para probar output
+            //int resultado = storage.length;
+            //System.out.println(resultado);
+            if(text.charAt(0) == ' ') return storage.length - 1;
+           return storage.length;
         }
     }
-    public static int countChar(String text, char c){
+    public static int countChar(String text, char c) {
 
         int cont = 0;
-        char[] characterArray = text.toCharArray();
-        if(text == null) return 0;
-        for (char value : characterArray) {
-            if (value == c) {
-                cont++;
+        if (text == null) return 0;
+        else if (text.isEmpty()) return 0;
+        else {
+            char[] characterArray = text.toCharArray();
+            if (text == null) return 0;
+            for (char value : characterArray) {
+                if (value == c) {
+                    cont++;
+                }
             }
+            /* PARA PROBAR EL OUTPUT */ //System.out.println(cont);
+            return cont;
         }
-        /* PARA PROBAR EL OUTPUT */ //System.out.println(cont);
-        return cont;
     }
 
     public static int countCharIgnoringCase(String text, char c){
         int cont = 0;
-        char[] characterArray = text.toCharArray();
-        if(text.isEmpty()){
-            return 0;
-        }
-        for (char value : characterArray) {
-            char lower = Character.toLowerCase(c);
-            char upper = Character.toUpperCase(c);
-            if(value == c || value == lower || value == upper) {
-                cont++;
+
+        if(text == null)return 0;
+        else if(text.isEmpty()) return 0;
+        else {
+            char[] characterArray = text.toCharArray();
+            for (char value : characterArray) {
+                char lower = Character.toLowerCase(c);
+                char upper = Character.toUpperCase(c);
+                if (value == c || value == lower || value == upper) {
+                    cont++;
+                }
             }
         }
         System.out.println(cont);

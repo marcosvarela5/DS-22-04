@@ -7,12 +7,12 @@ public class PasswordUtils {
                 && hasLowerCase(password) && hasDigit(password) && hasSpecialCharacters(password);
     }
 
-    public static boolean hasEightCharacters(String password) {
+    private static boolean hasEightCharacters(String password) {
         char[] passwordArray = password.toCharArray();
-        return passwordArray.length >= 8;
+        return passwordArray.length > 7;
     }
 
-    public static boolean hasUpperCase(String password){
+    private static boolean hasUpperCase(String password){
         int aux = 0;
         char c;
         char[] passwordArray = password.toCharArray();
@@ -21,10 +21,10 @@ public class PasswordUtils {
             if(Character.isUpperCase(c))
                 aux++;
         }
-        return aux == 1;
+        return aux > 0;
     }
 
-    public static boolean hasLowerCase(String password){
+    private static boolean hasLowerCase(String password){
         int aux = 0;
         char c;
         char[] passwordArray = password.toCharArray();
@@ -33,10 +33,10 @@ public class PasswordUtils {
             if(Character.isLowerCase(c))
                 aux++;
         }
-        return aux == 1;
+        return aux > 0;
     }
 
-    public static boolean hasDigit(String password){
+    private static boolean hasDigit(String password){
         int aux = 0;
         char c;
         char[] passwordArray = password.toCharArray();
@@ -45,10 +45,10 @@ public class PasswordUtils {
             if(Character.isDigit(c))
                 aux++;
         }
-        return aux == 1;
+        return aux > 0;
     }
 
-    public static boolean hasSpecialCharacters(String password){
+    private static boolean hasSpecialCharacters(String password){
         int aux = 0;
         char c;
         char[] passwordArray = password.toCharArray();

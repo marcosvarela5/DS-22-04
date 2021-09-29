@@ -4,48 +4,56 @@ import java.util.Arrays;
 
 public class Ski {
 
-    public static int downTheSlope (char [][] slopeMap, int right, int down) {
-        int r = 0, c = 0;
-        int cont = 0;
-        boolean seguir = true;
+    public static int downTheSlope(char[][] slopeMap, int right, int down) {
+        int rows, columns;
 
-        if(r != c){
-            throw new IllegalArgumentException("Matrix is not valid");
-        }
-
-        for(r = 0; r<slopeMap[r].length; r++){
-            for(c = 0; c<slopeMap[c].length; c++) {
-                if (slopeMap[r][c] != '#' || slopeMap[r][c] != '.')
-                    throw new IllegalArgumentException("Invalid matrix");
-            }
-        }
-
-        while(seguir){
-        for(c = 0; c < right; c++) {
-            if (Arrays.deepToString(slopeMap).charAt(slopeMap[r][c]) == '#') {
-                cont++;
-            }
-        }
-        slopeMap[r][c] = slopeMap[r][c+right];
-        if(c > slopeMap[c].length)
-            slopeMap[r][c] = slopeMap[r][0];
-        else
-        for(r = 0; r < down; r++) {
-            if (Arrays.deepToString(slopeMap).charAt(slopeMap[r][c]) == '#') {
-                cont++;
-            }
-        }
-
-        if(r >= slopeMap[r].length)
-            seguir = false;
-        else
-        slopeMap[r][c] = slopeMap[r+down][c];
-
-        }
-        return cont;
     }
 
     public static void main(String[] args) {
 
     }
 }
+
+    /*public static int downTheSlope (char [][] slopeMap, int right, int down) {
+        int cont = 0;
+        boolean seguir = true;
+        int rows = 0;
+        int columns = 0;
+
+        if(rows != columns){
+            throw new IllegalArgumentException("Matrix is not valid");
+        }
+
+        for(rows = 0; rows<slopeMap[rows].length; rows++){
+            for(columns = 0; columns<slopeMap[columns].length; columns++) {
+                if (slopeMap[rows][columns] != '#' || slopeMap[rows][columns] != '.')
+                    throw new IllegalArgumentException("Invalid matrix");
+            }
+        }
+
+        while(seguir){
+        for(columns = 0; columns < right; columns++) {
+            if (Arrays.deepToString(slopeMap).charAt(slopeMap[rows][columns]) == '#') {
+                cont++;
+            }
+        }
+        slopeMap[rows][columns] = slopeMap[rows][columns+right];
+        if(columns > slopeMap[columns].length)
+            slopeMap[rows][columns] = slopeMap[rows][0];
+        else
+        for(rows = 0; rows < down; rows++) {
+            if (Arrays.deepToString(slopeMap).charAt(slopeMap[rows][columns]) == '#') {
+                cont++;
+            }
+        }
+
+        if(rows >= slopeMap[rows].length)
+            seguir = false;
+        else
+        slopeMap[rows][columns] = slopeMap[rows+down][columns];
+
+        }
+        return cont;
+    }*/
+
+
