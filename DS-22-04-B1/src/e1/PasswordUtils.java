@@ -35,7 +35,6 @@ public class PasswordUtils {
         }
         return aux > 0;
     }
-
     private static boolean hasDigit(String password){
         int aux = 0;
         char c;

@@ -11,19 +11,19 @@ public class MatrixUtils {
 
     public static boolean areMapCharactersValid(char [][] slopeMap){
         int rows, columns;
-        for(rows = 0; rows < slopeMap[rows].length; rows++){
-            for(columns = 0; columns < slopeMap[columns].length; columns++){
-                if(slopeMap[rows][columns] != '.' || slopeMap[rows][columns] != '#') return false;
 
+        for(rows = 0; rows < slopeMap.length; rows++){
+            for(columns = 0; columns < slopeMap[rows].length; columns++){
+                return slopeMap[rows][columns] == '.' || slopeMap[rows][columns] == '#';
             }
         }
-        return true;
+        return false;
     }
     public static boolean isRightValid(char [][] slopeMap, int right){
-        return right >= slopeMap[0].length && right < 1;
+        return !(right >= slopeMap.length || right < 1);
     }
     public static boolean isDownValid(char[][] slopeMap, int down){
-        return down >= slopeMap.length && down < 1;
+        return !(down >= slopeMap[0].length || down < 1);
     }
 
     /*public static void checkMatrix(char[][] slopeMap, int right, int down){
