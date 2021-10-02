@@ -26,7 +26,4 @@ public class MatrixUtils {
         return !(down >= slopeMap[0].length || down < 1);
     }
 
-    /*public static void checkMatrix(char[][] slopeMap, int right, int down){
-
-    }*/
 }

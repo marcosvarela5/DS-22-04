@@ -2,8 +2,19 @@ package e3;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public class Melody {
+
+    private Notes note;
+    private Accidentals accidental;
+    private float time;
+    private float duration;
+
+    List<Notes> notesList = new ArrayList<>();
+    List<Accidentals> accidentalsList = new ArrayList<>();
+    List<Float> timeList = new ArrayList<>();
 
     public Melody(){
     }
@@ -13,19 +24,19 @@ public class Melody {
     }
 
     public Notes getNote(int index){
-        return Notes.DO;
+        return notesList.get(index);
     }
 
     public Accidentals getAccidental(int index){
-        return Accidentals.Flat;
+        return accidentalsList.get(index);
     }
 
     public float getTime(int index){
-        return 0;
+        return timeList.get(index);
     }
 
     public int size(){
-        return 0;
+        return notesList.size();
     }
 
     public float getDuration(){
