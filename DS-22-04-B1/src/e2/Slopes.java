@@ -15,18 +15,18 @@ public class Slopes {
 
         while(go) {
 
-            for (aux = j; aux < j + right; aux++) {
+            for (aux = j; aux < j+right; aux++) {
                 if (slopeMap[i][aux] == '#') cont++;
                 if(aux > slopeMap[0].length - 1) aux = aux - slopeMap.length;
-
             }
             j += right;
 
             for(aux = i; aux < i + down; aux++){
                 if(slopeMap[aux][j] == '#') cont++;
-                if(aux >= slopeMap.length - 1)
+                if(aux >= slopeMap.length - 1) {
                     aux = slopeMap[0].length - 1;
                     go = false;
+                }
             }
             i+=down;
         }

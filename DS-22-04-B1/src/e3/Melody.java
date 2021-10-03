@@ -15,7 +15,9 @@ public class Melody {
     }
 
     public void addNote(Notes note, Accidentals accidental, float time){
-
+        notesList.add(note);
+        accidentalsList.add(accidental);
+        timeList.add(time);
     }
 
     public Notes getNote(int index){
@@ -48,10 +50,10 @@ public class Melody {
         return 0;
     }
 
-
     @Override
     public String toString() {
         return Notes.DO.toString();
     }
+
 }
 
