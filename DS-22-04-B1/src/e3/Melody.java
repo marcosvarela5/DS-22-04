@@ -7,11 +7,6 @@ import java.util.List;
 
 public class Melody {
 
-    private Notes note;
-    private Accidentals accidental;
-    private float time;
-    private float duration;
-
     List<Notes> notesList = new ArrayList<>();
     List<Accidentals> accidentalsList = new ArrayList<>();
     List<Float> timeList = new ArrayList<>();
@@ -43,7 +38,20 @@ public class Melody {
         return 0;
     }
 
+    @Override
+    public boolean equals (Object o) {
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
 
 
-
+    @Override
+    public String toString() {
+        return Notes.DO.toString();
+    }
 }
+
