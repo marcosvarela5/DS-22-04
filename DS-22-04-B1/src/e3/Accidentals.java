@@ -1,9 +1,9 @@
 package e3;
 
 public enum Accidentals {
-    Flat("b"),
-    Sharp("#"),
-    Natural("");
+    FLAT("b"),
+    SHARP("#"),
+    NATURAL("");
 
     private final String symbol;
 
