@@ -26,7 +26,6 @@ public class Slopes {
                 if(aux >= slopeMap.length - 1) { //cuando esto es true es cuando tira el fallo, ultima iteracion
                     go = false;
                     aux = slopeMap[0].length - 1;
-                    return cont;
                 }
             }
             i+=down;

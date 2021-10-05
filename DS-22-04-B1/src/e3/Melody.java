@@ -2,7 +2,6 @@ package e3;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class Melody {
 
@@ -17,22 +16,24 @@ public class Melody {
 
         if(note == null) throw new IllegalArgumentException("Note can't be a null value");
         if(accidental == null) throw new IllegalArgumentException("Accidental can't be a null value");
-        if(time <= 0) throw new IllegalArgumentException("Time has to be > 0");
+        if(time <= 0) throw new IllegalArgumentException("Time has to be bigger than 0");
         notesList.add(note);
         accidentalsList.add(accidental);
         timeList.add(time);
     }
 
     public Notes getNote(int index) {
-        if(index >= notesList.size()) throw new IllegalArgumentException("This index does not exist");
+        if(index >= notesList.size() || index < 0) throw new IllegalArgumentException("This index does not exist");
         return notesList.get(index);
     }
 
     public Accidentals getAccidental(int index) {
+        if(index >= accidentalsList.size() || index < 0) throw new IllegalArgumentException("This index does not exist");
         return accidentalsList.get(index);
     }
 
     public float getTime(int index) {
+        if(index >= timeList.size() || index < 0) throw new IllegalArgumentException("This index does not exist");
         return timeList.get(index);
     }
 
@@ -49,7 +50,7 @@ public class Melody {
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode() { //hash 31
             int result = notesList.hashCode();
             result = 31 * result + accidentalsList.hashCode();
             result = 31 * result + timeList.hashCode();
@@ -67,6 +68,7 @@ public class Melody {
 
         Melody melody = (Melody) o;
 
+        //tiene que haber otra manera menos engorrosa de hacerlo, revisar si hay tiempo
         for (i = 0; i < melody.size(); i++) {
             if ((this.notesList.get(i).equals(Notes.DO) && this.accidentalsList.get(i).equals(Accidentals.SHARP)) &&
                     (((Melody) o).notesList.get(i).equals(Notes.RE) && this.accidentalsList.get(i).equals(Accidentals.FLAT)))
@@ -107,27 +109,20 @@ public class Melody {
         return false;
     }
 
-
-
     @Override
     public String toString() {
         int i;
-        StringBuilder melody = new StringBuilder(); //HAY QUE USAR STRINGBUILDER PORQUE CON RETURN PETA EL BUCLE!!
+        StringBuilder melody = new StringBuilder(); //utilizando StringBuilder no peta
         for(i = 0; i< notesList.size(); i++){
             melody.append(notesList.get(i).toString()).append(accidentalsList.get(i).toString())
-                    .append("(").append(timeList.get(i).toString()).append(") ");
-
+                    .append("(").append(timeList.get(i).toString());
+                    if(i < notesList.size() - 1) {
+                        melody.append(") ");
+                    }
+                    else
+                        melody.append(")");
         }
         return melody.toString();
     }
-
-    /* DANGER: OUTPUT TEST ZONE */
-    /*public static void main(String[] args) {
-        Melody melody = new Melody();
-        melody.addNote(Notes.DO, Accidentals.Flat, 4);
-        melody.addNote(Notes.RE, Accidentals.Sharp, 3);
-        String s = melody.toString();
-        System.out.println(s);
-    }*/
 }
 
