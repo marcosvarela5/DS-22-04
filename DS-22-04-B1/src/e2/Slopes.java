@@ -16,16 +16,18 @@ public class Slopes {
         while(go) {
 
             for (aux = j; aux < j+right; aux++) {
+                if(aux > slopeMap[0].length - 1){ aux = aux - slopeMap.length;}
                 if (slopeMap[i][aux] == '#') cont++;
-                if(aux > slopeMap[0].length - 1) aux = aux - slopeMap.length;
             }
             j += right;
 
             for(aux = i; aux < i + down; aux++){
-                if(slopeMap[aux][j] == '#') cont++;
                 if(aux >= slopeMap.length - 1) { //cuando esto es true es cuando tira el fallo, ultima iteracion
-                    go = false;
                     aux = slopeMap[0].length - 1;
+                    go = false;
+                }
+                else{
+                    if(slopeMap[aux][j] == '#') cont++;
                 }
             }
             i+=down;
@@ -38,7 +40,23 @@ public class Slopes {
     }
 
 
-   /* public static void main(String[] args) {
+   /*public static void main(String[] args) {
+       char[][] map = {
+               {'.', '.', '#', '#', '.', '.', '.', '.', '.', '.', '.'},
+               {'#', '.', '.', '.', '#', '.', '.', '.', '#', '.', '.'},
+               {'.', '#', '.', '.', '.', '.', '#', '.', '.', '#', '.'},
+               {'.', '.', '#', '.', '#', '.', '.', '.', '#', '.', '#'},
+               {'.', '#', '.', '.', '.', '#', '#', '.', '.', '#', '.'},
+               {'.', '.', '#', '.', '#', '#', '.', '.', '.', '.', '.'},
+               {'.', '#', '.', '#', '.', '#', '.', '.', '.', '.', '#'},
+               {'.', '#', '.', '.', '.', '.', '.', '.', '.', '.', '#'},
+               {'#', '.', '#', '#', '.', '.', '.', '#', '.', '.', '.'},
+               {'#', '.', '.', '.', '#', '#', '.', '.', '.', '.', '#'},
+               {'.', '#', '.', '.', '#', '.', '.', '.', '#', '.', '#'}
+       };
+
+       int result = downTheSlope(map, 3,1);
+       System.out.println(result);
 
     }*/
 }

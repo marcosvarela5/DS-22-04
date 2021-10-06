@@ -2,6 +2,7 @@ package e3;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Melody {
 
@@ -50,61 +51,60 @@ public class Melody {
     }
 
     @Override
-    public int hashCode() { //hash 31
-            int result = notesList.hashCode();
-            result = 31 * result + accidentalsList.hashCode();
-            result = 31 * result + timeList.hashCode();
-            return result;
-        }
+    public int hashCode() {
+        return Objects.hash(notesList, accidentalsList, timeList);
+    }
 
     @Override
     public boolean equals(Object o) {
         int i;
+        Melody melody = (Melody) o;
+
         if (o == null) return false;
         if (this == o) return true;
         if (this.getClass() != o.getClass()) return false;
+
         if(this.size() != ((Melody) o).size()) return false;
         if(this.size() == 0 && ((Melody) o).size() == 0) return true;
+        else {
+            for (i = 0; i < melody.size(); i++) {
+                if ((this.notesList.get(i) == Notes.DO && this.accidentalsList.get(i) == Accidentals.SHARP) &&
+                        (((Melody) o).notesList.get(i) == Notes.RE && this.accidentalsList.get(i) == Accidentals.FLAT))
+                    return true;
 
-        Melody melody = (Melody) o;
+                else if ((this.notesList.get(i).equals(Notes.RE) && this.accidentalsList.get(i).equals(Accidentals.SHARP)) &&
+                        (((Melody) o).notesList.get(i) == Notes.MI && this.accidentalsList.get(i) == Accidentals.FLAT))
+                    return true;
 
-        //tiene que haber otra manera menos engorrosa de hacerlo, revisar si hay tiempo
-        for (i = 0; i < melody.size(); i++) {
-            if ((this.notesList.get(i).equals(Notes.DO) && this.accidentalsList.get(i).equals(Accidentals.SHARP)) &&
-                    (((Melody) o).notesList.get(i).equals(Notes.RE) && this.accidentalsList.get(i).equals(Accidentals.FLAT)))
-                return true;
+                else if ((this.notesList.get(i) == Notes.MI && this.accidentalsList.get(i) == Accidentals.NATURAL) &&
+                        (((Melody) o).notesList.get(i) == Notes.FA && this.accidentalsList.get(i) == Accidentals.FLAT))
+                    return true;
 
-            if ((this.notesList.get(i).equals(Notes.RE) && this.accidentalsList.get(i).equals(Accidentals.SHARP)) &&
-                    (((Melody) o).notesList.get(i).equals(Notes.MI) && this.accidentalsList.get(i).equals(Accidentals.FLAT)))
-                return true;
+                else if ((this.notesList.get(i) == Notes.MI && this.accidentalsList.get(i) == Accidentals.SHARP) &&
+                        (((Melody) o).notesList.get(i) == Notes.FA && this.accidentalsList.get(i) == Accidentals.NATURAL))
+                    return true;
 
-            if((this.notesList.get(i).equals(Notes.MI) && this.accidentalsList.get(i).equals(Accidentals.NATURAL)) &&
-                    (((Melody) o).notesList.get(i).equals(Notes.FA) && this.accidentalsList.get(i).equals(Accidentals.FLAT)))
-                return true;
+                else if ((this.notesList.get(i) == Notes.FA && this.accidentalsList.get(i) == Accidentals.SHARP) &&
+                        (((Melody) o).notesList.get(i) == Notes.SOL && this.accidentalsList.get(i) == Accidentals.FLAT))
+                    return true;
 
-            if((this.notesList.get(i).equals(Notes.MI) && this.accidentalsList.get(i).equals(Accidentals.SHARP)) &&
-                    (((Melody) o).notesList.get(i).equals(Notes.FA) && this.accidentalsList.get(i).equals(Accidentals.NATURAL)))
-                return true;
+                else if ((this.notesList.get(i) == Notes.SOL && this.accidentalsList.get(i) == Accidentals.SHARP) &&
+                        (((Melody) o).notesList.get(i) == Notes.LA && this.accidentalsList.get(i) == Accidentals.FLAT))
+                    return true;
 
-            if((this.notesList.get(i).equals(Notes.FA) && this.accidentalsList.get(i).equals(Accidentals.SHARP)) &&
-                    (((Melody) o).notesList.get(i).equals(Notes.SOL) && this.accidentalsList.get(i).equals(Accidentals.FLAT)))
-                return true;
+                else if ((this.notesList.get(i).equals(Notes.LA) && this.accidentalsList.get(i).equals(Accidentals.SHARP)) &&
+                        (((Melody) o).notesList.get(i).equals(Notes.SI) && this.accidentalsList.get(i).equals(Accidentals.FLAT)))
+                    return true;
 
-            if((this.notesList.get(i).equals(Notes.SOL) && this.accidentalsList.get(i).equals(Accidentals.SHARP)) &&
-                    (((Melody) o).notesList.get(i).equals(Notes.LA) && this.accidentalsList.get(i).equals(Accidentals.FLAT)))
-                return true;
+                else if ((this.notesList.get(i) == Notes.SI && this.accidentalsList.get(i) == Accidentals.NATURAL) &&
+                        (((Melody) o).notesList.get(i) == Notes.DO && this.accidentalsList.get(i) == Accidentals.FLAT))
+                    return true;
 
-            if((this.notesList.get(i).equals(Notes.LA) && this.accidentalsList.get(i).equals(Accidentals.SHARP)) &&
-                    (((Melody) o).notesList.get(i).equals(Notes.SI) && this.accidentalsList.get(i).equals(Accidentals.FLAT)))
-                return true;
-
-            if((this.notesList.get(i).equals(Notes.SI) && this.accidentalsList.get(i).equals(Accidentals.NATURAL)) &&
-                    (((Melody) o).notesList.get(i).equals(Notes.DO) && this.accidentalsList.get(i).equals(Accidentals.FLAT)))
-                return true;
-
-            if((this.notesList.get(i).equals(Notes.SI) && this.accidentalsList.get(i).equals(Accidentals.SHARP)) &&
-                    (((Melody) o).notesList.get(i).equals(Notes.DO) && this.accidentalsList.get(i).equals(Accidentals.NATURAL)))
-                return true;
+                else if ((this.notesList.get(i) == Notes.SI && this.accidentalsList.get(i) == Accidentals.SHARP) &&
+                        (((Melody) o).notesList.get(i) == Notes.DO && this.accidentalsList.get(i) == Accidentals.NATURAL))
+                    return true;
+                return false;
+            }
         }
         return false;
     }
