@@ -66,7 +66,7 @@ public class Melody {
 
         if(this.size() != ((Melody) o).size()) return false;
         if(this.size() == 0 && ((Melody) o).size() == 0) return true;
-        else {
+        else if(this.size() == ((Melody) o).size()) {
             for (i = 0; i < melody.size(); i++) {
                 if ((this.notesList.get(i) == Notes.DO && this.accidentalsList.get(i) == Accidentals.SHARP) &&
                         (((Melody) o).notesList.get(i) == Notes.RE && this.accidentalsList.get(i) == Accidentals.FLAT))
@@ -103,7 +103,6 @@ public class Melody {
                 else if ((this.notesList.get(i) == Notes.SI && this.accidentalsList.get(i) == Accidentals.SHARP) &&
                         (((Melody) o).notesList.get(i) == Notes.DO && this.accidentalsList.get(i) == Accidentals.NATURAL))
                     return true;
-                return false;
             }
         }
         return false;
