@@ -5,7 +5,7 @@ public class Slopes {
     public static int downTheSlope(char[][] slopeMap, int right, int down) {
         boolean go = true;
         int cont = 0;
-        int i = 0, j = 0; // Comienza en la esquina superior izquierda de la matriz
+        int i = 0, j = 0;
         int aux;
 
         if(!MatrixUtils.isMapSquare(slopeMap)) throw new IllegalArgumentException("Map is not square");
@@ -18,7 +18,8 @@ public class Slopes {
             for (aux = j; aux < j+right; aux++) {
                 if (slopeMap[i][aux] == '#') cont++;
             }
-            if(aux >= slopeMap[0].length - 1){ aux = aux - slopeMap.length;}
+            if(aux >= slopeMap[0].length - 1){
+                aux = aux - slopeMap.length;}
             j += right;
 
             for(aux = i; aux < i + down; aux++){
