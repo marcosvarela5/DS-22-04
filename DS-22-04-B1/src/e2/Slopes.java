@@ -24,13 +24,15 @@ public class Slopes {
             for(aux = i; aux < i + down; aux++){
                 if(slopeMap[aux][j] == '#') cont++;
             }
-            if(aux >= slopeMap.length - 1) { //cuando esto es true es cuando tira el fallo, ultima iteracion
+            if(aux >= slopeMap.length - 1) {
+                aux = slopeMap[0].length - 1;
                 go = false;
             }
             i+=down;
         }
         return cont;
     }
+
 
     public static int jumpTheSlope(char[][] slopeMap, int right, int down){
         return 0;
