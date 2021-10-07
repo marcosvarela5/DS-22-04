@@ -72,7 +72,7 @@ public class Melody {
                         (((Melody) o).notesList.get(i) == Notes.RE && this.accidentalsList.get(i) == Accidentals.FLAT))
                     return true;
 
-                else if ((this.notesList.get(i).equals(Notes.RE) && this.accidentalsList.get(i).equals(Accidentals.SHARP)) &&
+                else if ((this.notesList.get(i) == Notes.RE && this.accidentalsList.get(i) == Accidentals.SHARP) &&
                         (((Melody) o).notesList.get(i) == Notes.MI && this.accidentalsList.get(i) == Accidentals.FLAT))
                     return true;
 
@@ -92,8 +92,8 @@ public class Melody {
                         (((Melody) o).notesList.get(i) == Notes.LA && this.accidentalsList.get(i) == Accidentals.FLAT))
                     return true;
 
-                else if ((this.notesList.get(i).equals(Notes.LA) && this.accidentalsList.get(i).equals(Accidentals.SHARP)) &&
-                        (((Melody) o).notesList.get(i).equals(Notes.SI) && this.accidentalsList.get(i).equals(Accidentals.FLAT)))
+                else if ((this.notesList.get(i) == Notes.LA && this.accidentalsList.get(i) == Accidentals.SHARP) &&
+                        (((Melody) o).notesList.get(i) == Notes.SI && this.accidentalsList.get(i) == Accidentals.FLAT))
                     return true;
 
                 else if ((this.notesList.get(i) == Notes.SI && this.accidentalsList.get(i) == Accidentals.NATURAL) &&
