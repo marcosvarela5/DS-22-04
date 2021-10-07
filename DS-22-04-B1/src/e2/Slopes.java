@@ -6,7 +6,7 @@ public class Slopes {
         boolean go = true;
         int cont = 0;
         int i = 0, j = 0;
-        int aux;
+        int aux; //variable que se desplaza
 
         if(!MatrixUtils.isMapSquare(slopeMap)) throw new IllegalArgumentException("Map is not square");
         if(!MatrixUtils.areMapCharactersValid(slopeMap)) throw new IllegalArgumentException("Map characters are not valid");
@@ -18,13 +18,13 @@ public class Slopes {
             for (aux = j; aux < j+right; aux++) {
                 if (slopeMap[i][aux] == '#') cont++;
             }
-            if(aux >= slopeMap[0].length - 1){
-                aux = aux - slopeMap.length;}
+            if(aux >= slopeMap.length - 1) aux = aux - slopeMap.length;
             j += right;
 
             for(aux = i; aux < i + down; aux++){
                 if(slopeMap[aux][j] == '#') cont++;
             }
+
             if(aux >= slopeMap.length - 1) {
                 aux = slopeMap[0].length - 1;
                 go = false;
@@ -33,7 +33,6 @@ public class Slopes {
         }
         return cont;
     }
-
 
     public static int jumpTheSlope(char[][] slopeMap, int right, int down){
         return 0;

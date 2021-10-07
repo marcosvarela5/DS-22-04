@@ -2,7 +2,6 @@ package e3;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class Melody {
 
@@ -38,11 +37,11 @@ public class Melody {
         return timeList.get(index);
     }
 
-    public int size() { //EL TAMAÑO DE CUALQUIERA DE LAS LISTAS YA Q NO SE PUEDE AÑADIR UN ELEMENTO SIN UNO DE LOS PARAMETROS
+    public int size() { //El tamaño de cualquier lista
         return notesList.size();
     }
 
-    public float getDuration() { //SIMPLEMENTE SE SUMAN LOS ELEMENTOS DE LA LISTA DE TIEMPO
+    public float getDuration() { //Se suman los elementos de la lista de tiempo
         float sum = 0;
         for (Float aFloat : timeList) {
             sum += aFloat;
@@ -51,56 +50,106 @@ public class Melody {
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(notesList, accidentalsList, timeList);
+    public int hashCode() { //Se utiliza el hash 31, se le asigna el mismo múltiplo a las notas equivalentes y se le suma uno
+        int result = 0;
+        for(int i = 0; i< notesList.size(); i++){
+            switch (notesList.get(i)){
+                case DO -> {
+                    if(getAccidental(i) == Accidentals.SHARP) result = 1 + 31;
+                    if(getAccidental(i) == Accidentals.NATURAL) result = 1 + 31 * 2;
+                    if(getAccidental(i) == Accidentals.FLAT) result = 1 + 31 * 3;
+                }
+                case RE -> {
+                    if(getAccidental(i) == Accidentals.FLAT) result = 1 + 31;
+                    if(getAccidental(i) == Accidentals.SHARP) result = 1 + 31 * 4;
+                    if(getAccidental(i) == Accidentals.NATURAL) result = 1 + 31 * 5;
+                }
+                case MI -> {
+                    if(getAccidental(i) == Accidentals.FLAT) result = 1 + 31 * 4;
+                    if(getAccidental(i) == Accidentals.SHARP) result = 1 + 31 * 6;
+                    if(getAccidental(i) == Accidentals.NATURAL) result = 1 + 31 * 7;
+                }
+                case FA -> {
+                    if(getAccidental(i) == Accidentals.FLAT) result = 1 + 31 * 7;
+                    if(getAccidental(i) == Accidentals.SHARP) result = 1 + 31 * 8;
+                    if(getAccidental(i) == Accidentals.NATURAL) result = 1 + 31 * 6;
+                }
+                case SOL -> {
+                    if(getAccidental(i) == Accidentals.FLAT) result = 1 + 31 * 8;
+                    if(getAccidental(i) == Accidentals.SHARP) result = 1 + 31 * 9;
+                    if(getAccidental(i) == Accidentals.NATURAL) result = 1 + 31 * 10;
+                }
+                case LA -> {
+                    if(getAccidental(i) == Accidentals.FLAT) result = 1 + 31 * 9;
+                    if(getAccidental(i) == Accidentals.SHARP) result = 1 + 31 * 11;
+                    if(getAccidental(i) == Accidentals.NATURAL) result = 1 + 31 * 12;
+                }
+                case SI -> {
+                    if(getAccidental(i) == Accidentals.FLAT) result = 1 + 31 * 11;
+                    if(getAccidental(i) == Accidentals.SHARP) result = 1 + 31 * 2;
+                    if(getAccidental(i) == Accidentals.NATURAL) result = 1 + 31 * 3;
+                }
+
+            }
+        }
+        return result;
     }
 
     @Override
     public boolean equals(Object o) {
         int i;
         Melody melody = (Melody) o;
-
-        if (o == null) return false;
-        if (this == o) return true;
-        if (this.getClass() != o.getClass()) return false;
-
+        if(o == null) return false;
+        if(this == o) return true;
         if(this.size() != ((Melody) o).size()) return false;
+        if(this.getClass() != o.getClass()) return false;
         if(this.size() == 0 && ((Melody) o).size() == 0) return true;
-        else if(this.size() == ((Melody) o).size()) {
+
+        if(this.size() > 0 && this.size() == ((Melody) o).size()) {
             for (i = 0; i < melody.size(); i++) {
-                if ((this.notesList.get(i) == Notes.DO && this.accidentalsList.get(i) == Accidentals.SHARP) &&
+
+                if ((this.notesList.get(i) == Notes.DO || ((Melody) o).notesList.get(i) == Notes.DO
+                        && this.accidentalsList.get(i) == Accidentals.SHARP || ((Melody) o).accidentalsList.get(i) == Accidentals.SHARP) &&
                         (((Melody) o).notesList.get(i) == Notes.RE && this.accidentalsList.get(i) == Accidentals.FLAT))
                     return true;
 
-                else if ((this.notesList.get(i) == Notes.RE && this.accidentalsList.get(i) == Accidentals.SHARP) &&
+
+                if ((this.notesList.get(i) == Notes.RE && this.accidentalsList.get(i) == Accidentals.SHARP) &&
                         (((Melody) o).notesList.get(i) == Notes.MI && this.accidentalsList.get(i) == Accidentals.FLAT))
                     return true;
 
-                else if ((this.notesList.get(i) == Notes.MI && this.accidentalsList.get(i) == Accidentals.NATURAL) &&
+
+                if ((this.notesList.get(i) == Notes.MI && this.accidentalsList.get(i) == Accidentals.NATURAL) &&
                         (((Melody) o).notesList.get(i) == Notes.FA && this.accidentalsList.get(i) == Accidentals.FLAT))
                     return true;
 
-                else if ((this.notesList.get(i) == Notes.MI && this.accidentalsList.get(i) == Accidentals.SHARP) &&
+
+                if ((this.notesList.get(i) == Notes.MI && this.accidentalsList.get(i) == Accidentals.SHARP) &&
                         (((Melody) o).notesList.get(i) == Notes.FA && this.accidentalsList.get(i) == Accidentals.NATURAL))
                     return true;
 
-                else if ((this.notesList.get(i) == Notes.FA && this.accidentalsList.get(i) == Accidentals.SHARP) &&
+
+                if ((this.notesList.get(i) == Notes.FA && this.accidentalsList.get(i) == Accidentals.SHARP) &&
                         (((Melody) o).notesList.get(i) == Notes.SOL && this.accidentalsList.get(i) == Accidentals.FLAT))
                     return true;
 
-                else if ((this.notesList.get(i) == Notes.SOL && this.accidentalsList.get(i) == Accidentals.SHARP) &&
+
+                if ((this.notesList.get(i) == Notes.SOL && this.accidentalsList.get(i) == Accidentals.SHARP) &&
                         (((Melody) o).notesList.get(i) == Notes.LA && this.accidentalsList.get(i) == Accidentals.FLAT))
                     return true;
 
-                else if ((this.notesList.get(i) == Notes.LA && this.accidentalsList.get(i) == Accidentals.SHARP) &&
+
+                if ((this.notesList.get(i) == Notes.LA && this.accidentalsList.get(i) == Accidentals.SHARP) &&
                         (((Melody) o).notesList.get(i) == Notes.SI && this.accidentalsList.get(i) == Accidentals.FLAT))
                     return true;
 
-                else if ((this.notesList.get(i) == Notes.SI && this.accidentalsList.get(i) == Accidentals.NATURAL) &&
+
+                if ((this.notesList.get(i) == Notes.SI && this.accidentalsList.get(i) == Accidentals.NATURAL) &&
                         (((Melody) o).notesList.get(i) == Notes.DO && this.accidentalsList.get(i) == Accidentals.FLAT))
                     return true;
 
-                else if ((this.notesList.get(i) == Notes.SI && this.accidentalsList.get(i) == Accidentals.SHARP) &&
+
+                if ((this.notesList.get(i) == Notes.SI && this.accidentalsList.get(i) == Accidentals.SHARP) &&
                         (((Melody) o).notesList.get(i) == Notes.DO && this.accidentalsList.get(i) == Accidentals.NATURAL))
                     return true;
             }
