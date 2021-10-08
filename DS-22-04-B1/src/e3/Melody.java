@@ -38,7 +38,8 @@ public class Melody {
         return timeList.get(index);
     }
 
-    public int size() { //El tamaño de cualquier lista
+    public int size() { //El tamaño de cualquier lista de la melodia, ya que no es posible insertar un elemento
+                        // sin modificar las 3 listas, por lo que su tamaño sera siempre el mismo
         return notesList.size();
     }
 
@@ -104,8 +105,10 @@ public class Melody {
         if(this.size() != ((Melody) o).size()) return false;
         if(this.getClass() != o.getClass()) return false;
         if(this.size() == 0 && ((Melody) o).size() == 0) return true;
-        if(Objects.equals(this.toString(), o.toString())) return true;
-
+        if(Objects.equals(this.toString(), o.toString())) return true; //de tal forma que si las melodías son iguales devuelva true sin pasar por los switches
+                                                                       // que no estan diseñados para funcionar cuando ambas melodías son iguales, siendo esta
+                                                                       // condicion comprobada aqui mismo
+        //esto no deberia hacerse de esta forma pero es funcional
         for(i = 0; i< notesList.size(); i++){
             switch (((Melody) o).getNote(i)){
                 case DO -> {
@@ -219,9 +222,10 @@ public class Melody {
     public String toString() {
         int i;
         StringBuilder melody = new StringBuilder(); //utilizando StringBuilder no peta
-        for(i = 0; i< notesList.size(); i++){
+        for(i = 0; i < notesList.size(); i++){
             melody.append(notesList.get(i).toString()).append(accidentalsList.get(i).toString())
                     .append("(").append(timeList.get(i).toString());
+            //esto es para que en el ultimo elemento no deje un espacio al final y pase los tests
             if(i < notesList.size() - 1) {
                 melody.append(") ");
             }
