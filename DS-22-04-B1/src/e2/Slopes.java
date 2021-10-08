@@ -38,8 +38,6 @@ public class Slopes {
         return 0;
     }
 
-
-
    /*public static void main(String[] args) {
        char[][] map = {
                {'.', '.', '#', '#', '.', '.', '.', '.', '.', '.', '.'},
@@ -54,12 +52,8 @@ public class Slopes {
                {'#', '.', '.', '.', '#', '#', '.', '.', '.', '.', '#'},
                {'.', '#', '.', '.', '#', '.', '.', '.', '#', '.', '#'}
        };
-
        int result = downTheSlope(map, 3,1);
        System.out.println(result);
-
     }*/
 }
-
-
 
