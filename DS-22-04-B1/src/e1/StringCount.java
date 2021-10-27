@@ -8,13 +8,13 @@ public class StringCount {
         if(text == null) return 0;
         else if(text.isEmpty()) return 0;
         else{
-        String[] storage = text.split("\\s+"); // Cada vez que encuentre un espacio o una cadena de espacios seguidos
+            String[] storage = text.split("\\s+"); // Cada vez que encuentre un espacio o una cadena de espacios seguidos
 
             //Para probar output
             //int resultado = storage.length;
             //System.out.println(resultado);
             if(text.charAt(0) == ' ') return storage.length - 1;
-           return storage.length;
+            return storage.length;
         }
     }
     public static int countChar(String text, char c) {
@@ -60,14 +60,13 @@ public class StringCount {
 
     public static void main(String[] args) {
 
-      /* ZONA DE PRUEBAS OUTPUTS */
+        /* ZONA DE PRUEBAS OUTPUTS */
         /* countWords("prueba count words numero uno");
         countChar("el gran pepe", 'e');
         countCharIgnoringCase("El gran pépeè", 'e');
         if(isPasswordSafe("abcde"))
             System.out.println("primera si");
         System.out.println("primera no");
-
         if(isPasswordSafe("1Ae,.?#$@")){
             System.out.println("segunda si");
         } else {

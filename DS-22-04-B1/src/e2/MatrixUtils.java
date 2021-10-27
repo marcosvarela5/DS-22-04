@@ -12,9 +12,11 @@ public class MatrixUtils {
     public static boolean areMapCharactersValid(char [][] slopeMap){
         int rows, columns;
 
-        for(rows = 0; rows < slopeMap.length; rows++){
-            for(columns = 0; columns < slopeMap[rows].length; columns++){
-                return slopeMap[rows][columns] == '.' || slopeMap[rows][columns] == '#';
+        if(isMapSquare(slopeMap)) {
+            for (rows = 0; rows < slopeMap.length; rows++) {
+                for (columns = 0; columns < slopeMap[rows].length; columns++) {
+                    return slopeMap[rows][columns] == '.' || slopeMap[rows][columns] == '#';
+                }
             }
         }
         return false;
