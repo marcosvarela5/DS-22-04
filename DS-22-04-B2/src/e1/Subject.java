@@ -9,8 +9,8 @@ public enum Subject {
 
     private final String symbol;
 
-    Subject(String symbol) {
-        this.symbol = symbol;
+    Subject(String name) {
+        this.symbol = name;
     }
 
     public String toString(){

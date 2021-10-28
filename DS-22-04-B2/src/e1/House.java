@@ -8,8 +8,8 @@ public enum House {
 
     private final String symbol;
 
-    House(String symbol) {
-        this.symbol = symbol;
+    House(String name) {
+        this.symbol = name;
     }
 
     public String toString(){
