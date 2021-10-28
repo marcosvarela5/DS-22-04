@@ -1,14 +1,16 @@
 package e1;
 
-public abstract class Member {
+public class Member implements Reward {
     public String name;
     public String surname;
     public int age;
+    public int horrocrux;
 
-    Member(String name, String surname, int age){
+    Member(String name, String surname, int age, int horrocrux){
         this.name = name;
         this.surname = surname;
         this.age = age;
+        this.horrocrux = horrocrux;
     }
 
     public String getSurname() {
@@ -34,7 +36,4 @@ public abstract class Member {
     public void setName(String name) {
         this.name = name;
     }
-
-
-
 }

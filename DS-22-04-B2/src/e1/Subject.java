@@ -1,11 +1,11 @@
 package e1;
 
 public enum Subject {
-    HISTORY("History"),
-    DEFENSE("Defense"),
-    TRANSFORMATIONS("Transformations"),
-    POTIONS("Potions"),
-    HERBOLOGY("Herbology");
+    HISTORY("Historia"),
+    DEFENSE("Defensa"),
+    TRANSFORMATIONS("Transformaciones"),
+    POTIONS("Pociones"),
+    HERBOLOGY("Herbología");
 
     private final String symbol;
 
