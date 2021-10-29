@@ -17,7 +17,7 @@ public abstract  class Worker extends Member{
             this.subject = subject;
         }
         @Override
-        public Number calculateReward() {
+        public double calculateReward() {
             if(subject == Subject.DEFENSE){ return horrocrux*50*0.75;}
             else return horrocrux*50;
         }
@@ -51,7 +51,7 @@ public abstract  class Worker extends Member{
             this.night = night;
         }
         @Override
-        public Number calculateReward() {
+        public double calculateReward() {
             return horrocrux*65;
         }
 
@@ -91,7 +91,7 @@ public abstract  class Worker extends Member{
         }
 
         @Override
-        public Number calculateReward() {
+        public double calculateReward() {
             return horrocrux * 75;
         }
 

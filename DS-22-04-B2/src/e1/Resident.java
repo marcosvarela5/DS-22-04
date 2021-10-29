@@ -25,7 +25,7 @@ public abstract class Resident extends Member {
             super(name, surname, age, horrocrux, house);
         }
         @Override
-        public Number calculateReward() {
+        public double calculateReward() {
             if(house != House.SLYTHERIN){
                 return 90*horrocrux;
             }
@@ -50,7 +50,7 @@ public abstract class Resident extends Member {
             super(name, surname, age, horrocrux, house);
         }
         @Override
-        public Number calculateReward() {
+        public double calculateReward() {
             if(house != House.SLYTHERIN){
                 return 80*horrocrux;
             }
