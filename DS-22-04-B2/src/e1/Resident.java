@@ -1,6 +1,6 @@
 package e1;
 
-public class Resident extends Member {
+public abstract class Resident extends Member {
 
     public House house;
 
@@ -13,11 +13,13 @@ public class Resident extends Member {
         return house;
     }
 
-    //este setter no deberia ser necesario
     public void setHouse(House house) {
         this.house = house;
     }
 
+    public abstract String toStringReward();
+
+    //Sublcase Estudiante
     public static class Student extends Resident{
         Student(String name, String surname, int age, int horrocrux, House house){
             super(name, surname, age, horrocrux, house);
@@ -31,12 +33,18 @@ public class Resident extends Member {
         }
 
         @Override
-        public String toString(){
+        public String toStringReward(){
             return name + " " + surname + "(Estudiante de " + this.house + "," + this.horrocrux + " horrocruxes): " +
                     this.calculateReward() + " galeones\n";
         }
+
+        @Override //no procede en esta clase
+        public String toStringSalary() {
+            return null;
+        }
     }
 
+    //Subclase Fantasma
     public static class Ghost extends Resident{
         Ghost(String name, String surname, int age, int horrocrux, House house){
             super(name, surname, age, horrocrux, house);
@@ -50,9 +58,14 @@ public class Resident extends Member {
         }
 
         @Override
-        public String toString(){
+        public String toStringReward(){
             return name + " " + surname + "(Fantasma de " + this.house + "," + this.horrocrux + " horrocruxes): " +
                     this.calculateReward() + " galeones\n";
+        }
+
+        @Override //no procede en esta clase
+        public String toStringSalary() {
+            return null;
         }
     }
 }

@@ -1,6 +1,6 @@
 package e1;
 
-public class Member implements Reward {
+public abstract class Member implements Reward {
     public String name;
     public String surname;
     public int age;
@@ -12,6 +12,9 @@ public class Member implements Reward {
         this.age = age;
         this.horrocrux = horrocrux;
     }
+
+    public abstract String toStringReward();
+    public abstract String toStringSalary();
 
     public String getSurname() {
         return surname;
