@@ -3,44 +3,60 @@ package e2;
 public class Apartment implements Comparable<Apartment>{
     public int price;
     public int ZIP;
-    public String address;
-    public Size size;
+    public String address; //se puede crear una clase adress para que sea mas preciso, hacer si da tiempo
     public int referenceNumber;
+    public int numberOfRooms;
 
-    Apartment(int price, int ZIP, String address, Size size){
-        this.price = price;
-        this.ZIP = ZIP;
-        this.address = address;
-        this.size = size;
+    public int getZIP() {
+        return ZIP;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public int getNumberOfRooms() {
+        return numberOfRooms;
+    }
+
+    public int getReferenceNumber() {
+        return referenceNumber;
     }
 
     public int getPrice() {
         return price;
     }
 
+    public int getTotalPrice(){
+        return price;
+    }
+
+    Apartment(int price, int ZIP, String address, int referenceNumber, int numberOfRooms){
+        this.price = price;
+        this.ZIP = ZIP;
+        this.address = address;
+        this.referenceNumber = referenceNumber;
+        this.numberOfRooms = numberOfRooms;
+    }
+
+    public String toString(){
+        return "\n Apartamento de " + getNumberOfRooms() +
+                " habitaciones en " + getAddress() + " " + getZIP() + " con un precio de " + getPrice() + "€" +
+                " reference number" + getReferenceNumber() + "\n";
+    }
+
     @Override
     public int compareTo(Apartment o) {
-        return Integer.compare(this.getPrice(), o.getPrice());
+        return Integer.compare(this.getReferenceNumber(), o.getReferenceNumber());
     }
 
+    public boolean equals(Apartment apartment){ //no usar numero de referencia
+        return true;
+    }
 
-    public class ApartmentWithGarage extends Apartment{
-        public int pricePerParcel;
-        public int numberOfParcels;
-
-        public ApartmentWithGarage(int price, int ZIP, String address, Size size, int pricePerParcel, int numberOfParcels) {
-            super(price, ZIP, address, size);
-            this.pricePerParcel = pricePerParcel;
-            this.numberOfParcels = numberOfParcels;
-        }
-
-        public int getGaragePrice(){
-            return numberOfParcels*pricePerParcel;
-        }
-
-        @Override
-        public int getPrice(){
-            return price + this.getGaragePrice();
-        }
+    public int hashCode(){ //no usar numero de referencia
+        return 0;
     }
 }
+
+
