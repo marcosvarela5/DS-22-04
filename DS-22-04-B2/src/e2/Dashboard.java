@@ -7,16 +7,19 @@ import java.util.List;
 
 public class Dashboard implements Comparator<Apartment> {
 
-    Comparator<Apartment> comparator;
+    Comparator<Apartment> comparator = null;
 
-    Dashboard(){
-        comparator = null;
+    Dashboard(){}
+
+    public void applySort(List<Apartment> apartmentList){
+        if(setComparator(this.comparator) == null) Collections.sort(apartmentList);
+        else
+        Collections.sort(apartmentList, setComparator(this.comparator));
     }
 
-    public void applySort(List<Apartment> apartmentList, Comparator<Apartment> comparator){
-        if(comparator == null) Collections.sort(apartmentList);
-        else
-        Collections.sort(apartmentList, comparator);
+    public Comparator<Apartment> setComparator(Comparator<Apartment> comparator){
+        this.comparator = comparator;
+        return this.comparator;
     }
 
 
@@ -38,14 +41,20 @@ public class Dashboard implements Comparator<Apartment> {
         apartmentList.add(a1);
         apartmentList.add(a2);
         apartmentList.add(a3);
-        d1.applySort(apartmentList, new OrderByPrice());
+
+        d1.applySort(apartmentList);
+        System.out.println("Orden natural 1\n" + apartmentList);
+        d1.setComparator(new OrderByPrice());
+        d1.applySort(apartmentList);
         System.out.println("Ordenado por precio\n" + apartmentList);
-        d1.applySort(apartmentList, new OrderByZIP());
+        d1.setComparator(new OrderByZIP());
+        d1.applySort(apartmentList);
         System.out.println("Ordenado por ZIP\n" + apartmentList);
-        d1.applySort(apartmentList, new OrderByRooms());
+        d1.setComparator(new OrderByRooms());
+        d1.applySort(apartmentList);
         System.out.println("Ordenado por habitaciones\n" + apartmentList);
-        d1.applySort(apartmentList, new OrderByRooms());
-        System.out.println("Orden natural\n" + apartmentList);
-        d1.applySort(apartmentList, null);
+        d1.setComparator(null);
+        d1.applySort(apartmentList);
+        System.out.println("Orden natural 2\n" + apartmentList);
     }
 }
