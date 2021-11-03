@@ -60,7 +60,6 @@ public class Apartment implements Comparable<Apartment>{
         }
     }
 
-
     public int hashCode(){ //no usar numero de referencia
         int result = 0;
         //No es sólido, existe una diminuta posibilidad de que haya coincidencia, acordarse de cambiarlo!!

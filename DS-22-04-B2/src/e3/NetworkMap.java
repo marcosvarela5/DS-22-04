@@ -2,12 +2,7 @@ package e3;
 
 import java.util.List;
 
-public class Network implements NetworkManager {
-
-    Network(NetworkManager implementation){
-        implementation = new NetworkMap();
-    }
-
+public class NetworkMap implements NetworkManager{
     @Override
     public void addUser(String user, List<TopicOfInterest> topicsOfInterest) {
 
