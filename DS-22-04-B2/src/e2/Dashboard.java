@@ -26,10 +26,10 @@ public class Dashboard{
 
         List<Apartment> apartmentList = new ArrayList<>();
         Dashboard d1 = new Dashboard();
-        Apartment a1 = new Apartment(30000, 15005, "Elviña", 490340, 4);
+        Apartment a1 = new Apartment(30000, 15005, new Address("Pocomaco", 15, "1C"), 490340, 4);
         Apartment a2 = new ApartmentWithGarage(200000,
-                15003, "Orzán",  490342, 3, 5000,3);
-        Apartment a3 = new Apartment(40000, 15006, "Riazor", 5232, 5);
+                15003, new Address("Orzán", 12, "2D"),  490342, 3, 5000,3);
+        Apartment a3 = new Apartment(40000, 15006, new Address("Elviña", 16, "12B"), 5232, 5);
 
         apartmentList.add(a1);
         apartmentList.add(a2);

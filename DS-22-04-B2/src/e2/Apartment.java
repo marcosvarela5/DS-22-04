@@ -3,7 +3,7 @@ package e2;
 public class Apartment implements Comparable<Apartment>{
     public int price;
     public int ZIP;
-    public String address; //se puede crear una clase adress para que sea mas preciso, hacer si da tiempo
+    public Address address;
     public int referenceNumber;
     public int numberOfRooms;
 
@@ -11,7 +11,7 @@ public class Apartment implements Comparable<Apartment>{
         return ZIP;
     }
 
-    public String getAddress() {
+    public Address getAddress() {
         return address;
     }
 
@@ -31,7 +31,7 @@ public class Apartment implements Comparable<Apartment>{
         return price;
     }
 
-    Apartment(int price, int ZIP, String address, int referenceNumber, int numberOfRooms){
+    Apartment(int price, int ZIP, Address address, int referenceNumber, int numberOfRooms){
         this.price = price;
         this.ZIP = ZIP;
         this.address = address;
@@ -50,12 +50,24 @@ public class Apartment implements Comparable<Apartment>{
         return Integer.compare(this.getReferenceNumber(), o.getReferenceNumber());
     }
 
-    public boolean equals(Apartment apartment){ //no usar numero de referencia
-        return true;
+
+    public boolean equals(Apartment apartment) { //no usar numero de referencia
+        if (apartment != null && this instanceof ApartmentWithGarage) return false;
+        else {
+            assert apartment != null;
+            return apartment.getAddress().equals(this.getAddress()) && apartment.getZIP() == this.getZIP() &&
+                    apartment.getNumberOfRooms() == this.getNumberOfRooms() && apartment.getPrice() == this.getPrice();
+        }
     }
 
+
     public int hashCode(){ //no usar numero de referencia
-        return 0;
+        int result = 0;
+        //No es sólido, existe una diminuta posibilidad de que haya coincidencia, acordarse de cambiarlo!!
+        result = address.getNumber() * 31;
+        result = result + address.getStreet().length() * 31 + getZIP() * 31;
+        result = result + getNumberOfRooms() * 31 + getPrice();
+        return result;
     }
 }
 
