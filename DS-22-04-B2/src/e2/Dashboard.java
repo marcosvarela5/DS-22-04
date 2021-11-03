@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class Dashboard implements Comparator<Apartment> {
+public class Dashboard{
 
     Comparator<Apartment> comparator = null;
 
@@ -22,13 +22,6 @@ public class Dashboard implements Comparator<Apartment> {
         return this.comparator;
     }
 
-
-    @Override
-    public int compare(Apartment o1, Apartment o2) {
-        return o1.getReferenceNumber() - o2.getReferenceNumber();
-    }
-
-
     public static void main(String[] args) {
 
         List<Apartment> apartmentList = new ArrayList<>();
@@ -42,6 +35,7 @@ public class Dashboard implements Comparator<Apartment> {
         apartmentList.add(a2);
         apartmentList.add(a3);
 
+        System.out.println("--------- PRUEBA DE OUTPUT -----------");
         d1.applySort(apartmentList);
         System.out.println("Orden natural 1\n" + apartmentList);
         d1.setComparator(new OrderByPrice());
