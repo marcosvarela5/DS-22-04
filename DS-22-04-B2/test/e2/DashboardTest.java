@@ -12,10 +12,6 @@ class DashboardTest {
     void setUp() {
     }
 
-    @AfterEach
-    void tearDown() {
-    }
-
     @Test
     void applySort() {
     }
@@ -23,4 +19,10 @@ class DashboardTest {
     @Test
     void setComparator() {
     }
+
+    @Test
+    void TestEquals(){}
+
+    void TestHashCode(){}
+
 }

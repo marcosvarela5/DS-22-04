@@ -17,22 +17,26 @@ public class Colegio {
 
     public static List<String> imprimirSalarios(List<Member> workerList){
         List<String> salaryList = new ArrayList<>();
-        int gasto = 0;
         for(Member worker : workerList) {
             if(worker instanceof Resident) throw new IllegalArgumentException("A resident does not have salary, only workers do");
             else
             salaryList.add(worker.toStringSalary());
         }
 
-        for(Member worker : workerList){
-            gasto += worker.calculateSalary();
-        }
-        salaryList.add("El gasto de Hogwarts en personal es de " + gasto + " galeones.");
+        salaryList.add("El gasto de Hogwarts en personal es de " + gasto(workerList) + " galeones.");
         return salaryList;
     }
 
+    public static int gasto(List<Member> workerList){
+        int gasto = 0;
+        for(Member worker : workerList){
+            gasto += worker.calculateSalary();
+        }
+        return gasto;
+    }
 
-    public static void main(String[] args) {
+
+    /*public static void main(String[] args) {
         List<Member> memberList = new ArrayList<>();
         List<Member> workerList = new ArrayList<>();
         Member hermione = new Resident.Student("Hermione", "Granger", 18, 45, House.HUFFLEPUFF);
@@ -59,5 +63,5 @@ public class Colegio {
                 .map(String::valueOf)
                 .collect(Collectors.joining(""));
         System.out.println(s2);
-    }
+    }*/
 }

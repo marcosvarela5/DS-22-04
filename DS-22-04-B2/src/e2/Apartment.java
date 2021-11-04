@@ -58,11 +58,13 @@ public class Apartment implements Comparable<Apartment>{
             return apartment.getAddress().equals(this.getAddress()) && apartment.getZIP() == this.getZIP() &&
                     apartment.getNumberOfRooms() == this.getNumberOfRooms() && apartment.getPrice() == this.getPrice();
         }
+        //Si todos sus atributos son iguales el toString por lógica también y el número de referencia
+        //no se utiliza, ya que puede haber varios anuncios del mismo apartamento con distintos nºs de referencia
     }
 
     public int hashCode(){ //no usar numero de referencia
         int result = 0;
-        //No es sólido, existe una diminuta posibilidad de que haya coincidencia, acordarse de cambiarlo!!
+        //No es sólido, existe una diminuta posibilidad de que haya coincidencia, acordarse de mejorarlo!!
         result = address.getNumber() * 31;
         result = result + address.getStreet().length() * 31 + getZIP() * 31;
         result = result + getNumberOfRooms() * 31 + getPrice();

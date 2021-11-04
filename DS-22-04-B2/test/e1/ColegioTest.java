@@ -17,17 +17,19 @@ class ColegioTest {
     Member janitor;
     Member lazyJanitor;
     Member powerRanger;
+    Member lazyPowerRanger;
     List<Member> workerList;
 
     @BeforeEach
     void setUp() {
         harry = new Resident.Student("Harry", "Potter", 18, 2, House.GRYFFINDOR);
         hermione = new Resident.Student("Hermione", "Granger", 18, 2, House.SLYTHERIN);
-        casper = new Resident.Ghost("Casper", "El Fantasma", 180, 3, House.HUFFLEPUFF);
+        casper = new Resident.Ghost("Casper", "Mágico", 180, 3, House.HUFFLEPUFF);
         severus = new Worker.Teacher("Severus", "Snape", 40, 3, Subject.DEFENSE);
         janitor = new Worker.Janitor("Carlos", "Latre", 27, 2, true);
         lazyJanitor = new Worker.Janitor("Pepe", "Viyuela", 45, 1, false);
         powerRanger = new Worker.Ranger("Guarda", "Bosques", 30, 3, true);
+        lazyPowerRanger = new Worker.Ranger("Guardabosques", "Vago", 30, 3, false);
     }
 
     @Test
@@ -39,16 +41,19 @@ class ColegioTest {
         assertEquals(130, janitor.calculateReward());
         assertEquals(65, lazyJanitor.calculateReward());
         assertEquals(225, powerRanger.calculateReward());
+        assertEquals(225, lazyPowerRanger.calculateReward());
     }
 
     @Test
     void calculateSalary(){
         assertThrows(IllegalArgumentException.class, () -> harry.calculateSalary());
         assertThrows(IllegalArgumentException.class, () -> hermione.calculateSalary());
+        assertThrows(IllegalArgumentException.class, () -> casper.calculateSalary());
         assertEquals(500, severus.calculateSalary());
         assertEquals(160, janitor.calculateSalary());
         assertEquals(150, lazyJanitor.calculateSalary());
         assertEquals(180, powerRanger.calculateSalary());
+        assertEquals(170, lazyPowerRanger.calculateSalary());
     }
 
     @Test
@@ -60,7 +65,32 @@ class ColegioTest {
         workerList.add(casper);
         assertThrows(IllegalArgumentException.class, () -> Colegio.imprimirSalarios(workerList));
         workerList.remove(casper);
-        workerList.add(severus);
         assertEquals("Severus Snape(Docente de Defensa): 500 galeones\n", severus.toStringSalary());
+        assertEquals("Carlos Latre(Conserje): 160 galeones\n", janitor.toStringSalary());
+        assertEquals("Pepe Viyuela(Conserje): 150 galeones\n", lazyJanitor.toStringSalary());
+        assertNull(harry.toStringSalary());
+        assertNull(casper.toStringSalary());
+    }
+
+    @Test
+    void imprimirRecompensa(){
+        assertEquals("Hermione Granger(Estudiante de Slytherin,2 horrocruxes): " +
+                "360.0 galeones\n", hermione.toStringReward());
+        assertEquals("Casper Mágico(Fantasma de Hufflepuff,3 horrocruxes): " +
+                "240.0 galeones\n", casper.toStringReward());
+
+    }
+
+    @Test
+    void gasto(){
+        workerList = new ArrayList<>();
+        workerList.add(harry);
+        workerList.add(casper);
+        workerList.add(severus);
+        workerList.add(janitor);
+        assertThrows(IllegalArgumentException.class, () -> Colegio.gasto(workerList));
+        workerList.remove(harry);
+        workerList.remove(casper);
+        assertEquals(660, Colegio.gasto(workerList));
     }
 }
