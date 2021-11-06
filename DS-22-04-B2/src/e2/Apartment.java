@@ -1,11 +1,12 @@
 package e2;
 
-public class Apartment implements Comparable<Apartment>{
+public class Apartment implements Comparable<Apartment> {
     public int price;
     public int ZIP;
     public Address address;
     public int referenceNumber;
     public int numberOfRooms;
+
 
     public int getZIP() {
         return ZIP;
@@ -27,11 +28,11 @@ public class Apartment implements Comparable<Apartment>{
         return price;
     }
 
-    public int getTotalPrice(){
+    public int getTotalPrice() {
         return price;
     }
 
-    Apartment(int price, int ZIP, Address address, int referenceNumber, int numberOfRooms){
+    Apartment(int price, int ZIP, Address address, int referenceNumber, int numberOfRooms) {
         this.price = price;
         this.ZIP = ZIP;
         this.address = address;
@@ -39,10 +40,9 @@ public class Apartment implements Comparable<Apartment>{
         this.numberOfRooms = numberOfRooms;
     }
 
-    public String toString(){
+    public String toString() {
         return "\n Apartamento de " + getNumberOfRooms() +
-                " habitaciones en " + getAddress() + " " + getZIP() + " con un precio de " + getPrice() + "€" +
-                " reference number" + getReferenceNumber() + "\n";
+                " habitaciones en " + getAddress() + " " + getZIP() + " con un precio de " + getPrice() + "€\n";
     }
 
     @Override
@@ -51,24 +51,30 @@ public class Apartment implements Comparable<Apartment>{
     }
 
 
-    public boolean equals(Apartment apartment) { //no usar numero de referencia
-        if (apartment != null && this instanceof ApartmentWithGarage) return false;
-        else {
-            assert apartment != null;
-            return apartment.getAddress().equals(this.getAddress()) && apartment.getZIP() == this.getZIP() &&
-                    apartment.getNumberOfRooms() == this.getNumberOfRooms() && apartment.getPrice() == this.getPrice();
-        }
-        //Si todos sus atributos son iguales el toString por lógica también y el número de referencia
-        //no se utiliza, ya que puede haber varios anuncios del mismo apartamento con distintos nºs de referencia
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (this.toString().equals(o.toString())) return true;
+        Apartment apartment = (Apartment) o;
+        return getPrice() == apartment.getPrice() && getZIP() == apartment.getZIP() && getNumberOfRooms() == apartment.getNumberOfRooms()
+                && getAddress().equals(apartment.getAddress());
     }
 
-    public int hashCode(){ //no usar numero de referencia
-        int result = 0;
-        //No es sólido, existe una diminuta posibilidad de que haya coincidencia, acordarse de mejorarlo!!
-        result = address.getNumber() * 31;
-        result = result + address.getStreet().length() * 31 + getZIP() * 31;
-        result = result + getNumberOfRooms() * 31 + getPrice();
-        return result;
+    @Override
+    public int hashCode() {
+        int result;
+        if (this instanceof ApartmentWithGarage) {
+            result = address.getNumber() * 30;
+            result = result + address.getStreet().length() * 31 + getZIP() * 31;
+            result = result + getNumberOfRooms() * 31 + getPrice();
+            return result + getPrice() * getZIP() * 31;
+        }
+            result = address.getNumber() * 31;
+            result = result + address.getStreet().length() * 31 + getZIP() * 31;
+            result = result + getNumberOfRooms() * 31 + getPrice();
+            return result + getPrice() * getZIP() * 31;
+
     }
 }
 

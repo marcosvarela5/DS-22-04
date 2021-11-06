@@ -22,7 +22,7 @@ public class Dashboard{
         return this.comparator;
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
 
         List<Apartment> apartmentList = new ArrayList<>();
         Dashboard d1 = new Dashboard();
@@ -50,5 +50,5 @@ public class Dashboard{
         d1.setComparator(null);
         d1.applySort(apartmentList);
         System.out.println("Orden natural 2\n" + apartmentList);
-    }
+    }*/
 }
