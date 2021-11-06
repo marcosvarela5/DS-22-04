@@ -18,6 +18,7 @@ class ColegioTest {
     Member lazyJanitor;
     Member powerRanger;
     Member lazyPowerRanger;
+    Member profeHistoria;
     List<Member> workerList;
 
     @BeforeEach
@@ -30,6 +31,7 @@ class ColegioTest {
         lazyJanitor = new Worker.Janitor("Pepe", "Viyuela", 45, 1, false);
         powerRanger = new Worker.Ranger("Guarda", "Bosques", 30, 3, true);
         lazyPowerRanger = new Worker.Ranger("Guardabosques", "Vago", 30, 3, false);
+        profeHistoria = new Worker.Teacher("Emerildo", "Palacios", 40, 2, Subject.HISTORY);
     }
 
     @Test
@@ -42,6 +44,7 @@ class ColegioTest {
         assertEquals(65, lazyJanitor.calculateReward());
         assertEquals(225, powerRanger.calculateReward());
         assertEquals(225, lazyPowerRanger.calculateReward());
+        assertEquals(100, profeHistoria.calculateReward());
     }
 
     @Test
@@ -54,6 +57,7 @@ class ColegioTest {
         assertEquals(150, lazyJanitor.calculateSalary());
         assertEquals(180, powerRanger.calculateSalary());
         assertEquals(170, lazyPowerRanger.calculateSalary());
+        assertEquals(200, profeHistoria.calculateSalary());
     }
 
     @Test
@@ -78,6 +82,10 @@ class ColegioTest {
                 "360.0 galeones\n", hermione.toStringReward());
         assertEquals("Casper Mágico(Fantasma de Hufflepuff,3 horrocruxes): " +
                 "240.0 galeones\n", casper.toStringReward());
+        assertEquals("Severus Snape(Docente de Defensa,3 horrocruxes): " +
+                "112.5 galeones\n", severus.toStringReward());
+            assertEquals("Emerildo Palacios(Docente de Historia,2 horrocruxes): " +
+                "100.0 galeones\n", profeHistoria.toStringReward());
 
     }
 
