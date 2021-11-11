@@ -1,8 +1,12 @@
 package e3;
 
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.HashMap;
 import java.util.List;
 
 public class NetworkMatrix implements NetworkManager{
+
     @Override
     public void addUser(String user, List<TopicOfInterest> topicsOfInterest) {
 
