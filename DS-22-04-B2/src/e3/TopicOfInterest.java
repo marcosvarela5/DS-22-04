@@ -11,4 +11,8 @@ public class TopicOfInterest {
         return name;
     }
 
+    public String toString(){
+        return this.getName();
+    }
+
 }

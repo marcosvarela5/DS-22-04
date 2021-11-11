@@ -12,7 +12,9 @@ public class NetworkMap implements NetworkManager{
     @Override
     public void addUser(String user, List<TopicOfInterest> topicsOfInterest) {
         if(!mapName.containsKey(user)) mapName.put(user, topicsOfInterest);
-        throw new IllegalArgumentException("This user already exists!");
+        else {
+            throw new IllegalArgumentException("This user already exists!");
+        }
     }
 
     @Override
@@ -22,13 +24,18 @@ public class NetworkMap implements NetworkManager{
 
     @Override
     public void addInterest(String user, TopicOfInterest topicOfInterest) {
-        if(mapName.containsKey(user) && !mapName.get(user).contains(topicOfInterest)) mapName.get(user).add(topicOfInterest);
-        throw new IllegalArgumentException("User already has this interest");
+        if(mapName.containsKey(user) && !mapName.get(user).contains(topicOfInterest)) {mapName.get(user).add(topicOfInterest);}
+        else{
+        throw new IllegalArgumentException("Can't add a topic to this user");}
     }
 
     public void removeInterest(String user, TopicOfInterest topicOfInterest){
-        if(mapName.containsKey(user)) mapName.get(user).remove(topicOfInterest);
-        throw new IllegalArgumentException("Cannot remove this interest.");
+        if(mapName.containsKey(user)){
+            mapName.get(user).remove(topicOfInterest);
+        }
+        else{
+        throw new IllegalArgumentException("Can't remove this topic from this user.");
+        }
     }
 
     @Override

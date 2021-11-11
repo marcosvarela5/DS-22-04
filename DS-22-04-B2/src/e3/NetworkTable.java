@@ -12,7 +12,7 @@ public class NetworkTable implements NetworkManager{
         int i = 0;
         int j = 0;
         int a = 0;
-        while (!userTable[i].isEmpty()) {
+        while (userTable[i] != null) {
             i++;
             if (i == userTable.length - 1) throw new IllegalArgumentException("Can't add new user");
         }
