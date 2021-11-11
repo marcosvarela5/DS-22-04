@@ -8,7 +8,6 @@ import java.util.Map;
 public class NetworkMap implements NetworkManager{
 
     Map<String, List<TopicOfInterest>> mapName = new HashMap<>();
-    List<TopicOfInterest> topicList = new ArrayList<>();
 
     @Override
     public void addUser(String user, List<TopicOfInterest> topicsOfInterest) {

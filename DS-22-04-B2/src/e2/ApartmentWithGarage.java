@@ -19,4 +19,10 @@ public class ApartmentWithGarage extends Apartment{
     public int getTotalPrice(){
         return price + this.getGaragePrice();
     }
+
+    @Override
+    public String toString() {
+        return "\n Apartamento con garaje de " + this.numberOfParcels + "plazas y de " + getNumberOfRooms() +
+                " habitaciones en " + getAddress() + " " + getZIP() + " con un precio de " + getPrice() + "€\n";
+    }
 }

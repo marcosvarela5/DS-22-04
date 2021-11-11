@@ -10,4 +10,5 @@ public class TopicOfInterest {
     public String getName(){
         return name;
     }
+
 }
