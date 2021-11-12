@@ -1,1 +1,1 @@
-La manera en la que entendemos el ejercicio es que participa el personal académico, por lo que alumnos y profesores son los participantes, y a mayores pueden participar personas externas en forma de voluntarios
+La manera en la que entendemos el enunciado es que participa el personal académico, por lo que alumnos y profesores son los participantes, y a mayores pueden participar personas externas en forma de voluntarios
