@@ -42,9 +42,9 @@ public class NetworkTable implements NetworkManager{
         int j;
         for(i = 0; i < userTable.length; i++) {
             for (j = 0; j < topicTable.length; j++) {
-            if (userTable[i].equals(user)){
-                while(topicTable[i][j] == null){ j++;}
-                topicTable[i][j] = topicOfInterest;}
+                if (userTable[i].equals(user)){
+                    while(topicTable[i][j] == null){ j++;}
+                    topicTable[i][j] = topicOfInterest;}
             }
         }
     }

@@ -30,7 +30,7 @@ public class Network implements NetworkManager {
 
     @Override
     public List<String> getUsers() {
-       return network.getUsers();
+        return network.getUsers();
     }
 
     @Override
@@ -43,4 +43,3 @@ public class Network implements NetworkManager {
         return network.getInterestsUser(user);
     }
 }
-
