@@ -56,5 +56,4 @@ public class NetworkMap implements NetworkManager{
     public List<TopicOfInterest> getInterestsUser(String user) {
         return mapName.get(user);
     }
-
 }
