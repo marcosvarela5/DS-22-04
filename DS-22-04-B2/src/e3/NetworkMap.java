@@ -26,7 +26,7 @@ public class NetworkMap implements NetworkManager{
     public void addInterest(String user, TopicOfInterest topicOfInterest) {
         if(mapName.containsKey(user) && !mapName.get(user).contains(topicOfInterest)) {mapName.get(user).add(topicOfInterest);}
         else{
-        throw new IllegalArgumentException("Can't add a topic to this user");}
+            throw new IllegalArgumentException("Can't add a topic to this user");}
     }
 
     public void removeInterest(String user, TopicOfInterest topicOfInterest){
@@ -34,7 +34,7 @@ public class NetworkMap implements NetworkManager{
             mapName.get(user).remove(topicOfInterest);
         }
         else{
-        throw new IllegalArgumentException("Can't remove this topic from this user.");
+            throw new IllegalArgumentException("Can't remove this topic from this user.");
         }
     }
 

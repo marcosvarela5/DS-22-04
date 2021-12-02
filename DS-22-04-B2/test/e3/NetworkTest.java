@@ -90,7 +90,7 @@ class NetworkTest {
     }
 
     @Disabled
-    void AddInterestTable(){
+    void testAddInterestTable(){
 
     }
 
@@ -106,8 +106,11 @@ class NetworkTest {
         assertTrue(emptyList.isEmpty());
     }
 
+    @Disabled
+    void testRemoveInterestTable(){}
+
     @Test
-    void getUsers(){
+    void testGetUsersMap(){
         List<String> userList = new ArrayList<>();
         mapNet.addUser("pepe", anEmptyList);
         mapNet.addUser("manolo", anEmptyList);
@@ -118,14 +121,21 @@ class NetworkTest {
         assertEquals(userList, mapNet.getUsers());
     }
 
+    @Disabled
+    void testGetUsersTable(){}
+
+
     @Test
-    void testGetInterests(){
+    void testGetInterestsMap(){
         List<TopicOfInterest> emptyList = new ArrayList<>();
         mapNet.addUser("pepe", emptyList);
         mapNet.addInterest("pepe", t4);
         mapNet.addInterest("pepe", t2);
         assertEquals(mapNet.getInterests(), emptyList);
     }
+
+    @Disabled
+    void testGetInterestsTable(){}
 
     @Test
     void testInterestUser(){
@@ -137,4 +147,7 @@ class NetworkTest {
         mapNet.addInterest("pepe", t2);
         assertEquals(mapNet.getInterests(), Stream.concat(emptyList2.stream(), emptyList.stream()).collect(Collectors.toList()));
     }
+
+    @Disabled
+    void testInterestTable(){}
 }
