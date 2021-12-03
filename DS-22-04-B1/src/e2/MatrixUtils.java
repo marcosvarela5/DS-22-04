@@ -14,7 +14,7 @@ public class MatrixUtils {
 
         if(isMapSquare(slopeMap)) {
             for (rows = 0; rows < slopeMap.length; rows++) {
-                for (columns = 0; columns < slopeMap[rows].length; columns++) {
+                for (columns = 0; columns < slopeMap[rows].length - 1; columns++) {
                     return slopeMap[rows][columns] == '.' || slopeMap[rows][columns] == '#';
                 }
             }

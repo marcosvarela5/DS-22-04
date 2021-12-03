@@ -26,7 +26,6 @@ public class Slopes {
             }
 
             if(aux >= slopeMap.length - 1) {
-                aux = slopeMap[0].length - 1;
                 go = false;
             }
             i+=down;
@@ -34,11 +33,12 @@ public class Slopes {
         return cont;
     }
 
+
     public static int jumpTheSlope(char[][] slopeMap, int right, int down){
         return 0;
     }
 
-   /*public static void main(String[] args) {
+   /* public static void main(String[] args) {
        char[][] map = {
                {'.', '.', '#', '#', '.', '.', '.', '.', '.', '.', '.'},
                {'#', '.', '.', '.', '#', '.', '.', '.', '#', '.', '.'},
