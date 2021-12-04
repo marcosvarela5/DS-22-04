@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4d7af1a-2d1c-4f45-9617-c3506491f85f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Bill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Date.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Filter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DS-22-04-B1/src/e2/MatrixUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DS-22-04-B1/src/e2/MatrixUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DS-22-04-B1/src/e2/Slopes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DS-22-04-B1/src/e2/Slopes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DS-22-04-B1/src/e4/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DS-22-04-B1/src/e4/Calculator.java" afterDir="false" />
+    <list default="true" id="e4d7af1a-2d1c-4f45-9617-c3506491f85f" name="Changes" comment="bill class made">
+      <change afterPath="$PROJECT_DIR$/src/FilterManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Date.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Filter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Filter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -55,8 +53,17 @@
       <updated>1638459543128</updated>
       <workItem from="1638459544514" duration="5000" />
       <workItem from="1638543356843" duration="36000" />
-      <workItem from="1638543415947" duration="1904000" />
+      <workItem from="1638543415947" duration="4064000" />
+      <workItem from="1638630911188" duration="961000" />
     </task>
+    <task id="LOCAL-00001" summary="bill class made">
+      <created>1638545385673</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1638545385673</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -72,5 +79,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="bill class made" />
+    <option name="LAST_COMMIT_MESSAGE" value="bill class made" />
   </component>
 </project>

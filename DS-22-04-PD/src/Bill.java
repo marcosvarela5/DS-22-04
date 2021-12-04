@@ -1,8 +1,9 @@
-public class Bill {
-    public String origin;
-    public String destination;
-    public int price;
-    public Date date;
+public final class Bill{
+    //Patrón Inmutable (no se pueden cambiar los datos de un billete una vez este es expedido (en nuestro programa, al crear una instancia)
+    private final String origin;
+    private final String destination;
+    private final int price;
+    private final Date date;
 
     Bill(String origin, String destination, int price, Date date){
         this.origin = origin;
@@ -10,8 +11,6 @@ public class Bill {
         this.price = price;
         this.date = date;
     }
-
-    //No se incluyen setters porque no tendría sentido cambiar los datos de un billete una vez expedido
 
     public String getOrigin() {
         return origin;
@@ -26,7 +25,7 @@ public class Bill {
     }
 
     public Date getDate() {
-        return date.setDate(date.day, date.month, date.year);
+        return date;
     }
 
     @Override
