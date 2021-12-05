@@ -1,11 +1,12 @@
-public final class Bill{
+public final class Ticket {
     //Patrón Inmutable (no se pueden cambiar los datos de un billete una vez este es expedido (en nuestro programa, al crear una instancia)
     private final String origin;
     private final String destination;
     private final int price;
-    private final Date date;
+    private final TicketDate date;
 
-    Bill(String origin, String destination, int price, Date date){
+
+    Ticket(String origin, String destination, int price, TicketDate date){
         this.origin = origin;
         this.destination = destination;
         this.price = price;
@@ -24,7 +25,7 @@ public final class Bill{
         return price;
     }
 
-    public Date getDate() {
+    public TicketDate getDate() {
         return date;
     }
 
@@ -32,8 +33,8 @@ public final class Bill{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Bill bill = (Bill) o;
-        return getPrice() == bill.getPrice() && getOrigin().equals(bill.getOrigin()) &&
-                getDestination().equals(bill.getDestination()) && getDate().equals(bill.getDate());
+        Ticket ticket = (Ticket) o;
+        return getPrice() == ticket.getPrice() && getOrigin().equals(ticket.getOrigin()) &&
+                getDestination().equals(ticket.getDestination()) && getDate().equals(ticket.getDate());
     }
 }

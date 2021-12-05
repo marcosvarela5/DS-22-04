@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4d7af1a-2d1c-4f45-9617-c3506491f85f" name="Changes" comment="bill class made">
-      <change afterPath="$PROJECT_DIR$/src/FilterManager.java" afterDir="false" />
+    <list default="true" id="e4d7af1a-2d1c-4f45-9617-c3506491f85f" name="Changes" comment="class Date and Bill defined as final (immutable pattern)">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Search.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TicketManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DS-22-04.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Date.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Filter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Filter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicketDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Filter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FilterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FilterManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -39,6 +43,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
@@ -54,7 +59,9 @@
       <workItem from="1638459544514" duration="5000" />
       <workItem from="1638543356843" duration="36000" />
       <workItem from="1638543415947" duration="4064000" />
-      <workItem from="1638630911188" duration="961000" />
+      <workItem from="1638630911188" duration="2568000" />
+      <workItem from="1638635875199" duration="1361000" />
+      <workItem from="1638713902391" duration="4030000" />
     </task>
     <task id="LOCAL-00001" summary="bill class made">
       <created>1638545385673</created>
@@ -63,7 +70,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638545385673</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="class Date and Bill defined as final (immutable pattern)">
+      <created>1638631914784</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1638631914784</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,6 +97,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="bill class made" />
-    <option name="LAST_COMMIT_MESSAGE" value="bill class made" />
+    <MESSAGE value="class Date and Bill defined as final (immutable pattern)" />
+    <option name="LAST_COMMIT_MESSAGE" value="class Date and Bill defined as final (immutable pattern)" />
   </component>
 </project>

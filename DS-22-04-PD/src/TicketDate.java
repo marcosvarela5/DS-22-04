@@ -1,9 +1,9 @@
-public class Date {
+public class TicketDate {
     public final int day;
     public final int month;
     public final int year;
 
-    Date(int day, int month, int year) {
+    TicketDate(int day, int month, int year) {
         if (day < 1 || (day > 30 && (month == 4 || month == 6 | month == 9 || month == 11))) {
             throw new IllegalArgumentException("Date is not valid");
         }
@@ -15,4 +15,13 @@ public class Date {
             this.year = year;
         }
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TicketDate date = (TicketDate) o;
+        return day == date.day && month == date.month && year == date.year;
+    }
+
 }
