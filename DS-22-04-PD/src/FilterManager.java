@@ -2,41 +2,65 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface FilterManager {
-    static List<Ticket> filterByDestination(String destination){
+    //Se filtran de 2 en 2 como dice el enunciado
+    static List<Ticket> filterByDestination(String destination1, String destination2, Clausula operando){
         List<Ticket> ticketList = new ArrayList<>();
-        for(int i = 0; i < TicketManager.getAvailableTickets().size(); i++){
-            if(TicketManager.getAvailableTickets().get(i).getDestination().equals(destination)){
-                ticketList.add(TicketManager.getAvailableTickets().get(i));
+        switch (operando) {
+            case OR -> {
+                for (int i = 0; i < TicketManager.getAvailableTickets().size(); i++){
+                    if(TicketManager.getAvailableTickets().get(i).getDestination().equals(destination1) ||
+                            TicketManager.getAvailableTickets().get(i).getDestination().equals(destination2)) {
+                        ticketList.add(TicketManager.getAvailableTickets().get(i));
+                    }
+                }
             }
+
+            case AND -> throw new IllegalArgumentException("No tickets available for this filter");
         }
-        return  ticketList;
+        return ticketList;
     }
-    static List<Ticket> filterByOrigin(String origin){
+
+    static List<Ticket> filterByOrigin(String origin1, String origin2, Clausula operando){
         List<Ticket> ticketList = new ArrayList<>();
-        for(int i = 0; i < TicketManager.getAvailableTickets().size(); i++){
-            if(TicketManager.getAvailableTickets().get(i).getOrigin().equals(origin)){
-                ticketList.add(TicketManager.getAvailableTickets().get(i));
+        switch (operando) {
+            case OR -> {
+                for (int i = 0; i < TicketManager.getAvailableTickets().size(); i++){
+                    if(TicketManager.getAvailableTickets().get(i).getOrigin().equals(origin1) ||
+                            TicketManager.getAvailableTickets().get(i).getOrigin().equals(origin2)) {
+                        ticketList.add(TicketManager.getAvailableTickets().get(i));
+                    }
+                }
             }
+
+            case AND -> throw new IllegalArgumentException("No tickets available for this filter");
         }
-        return  ticketList;
+        return ticketList;
     }
-    static List<Ticket> filterByDate(TicketDate date){
+
+    static List<Ticket> filterByDate(TicketDate date1, TicketDate date2, Clausula operando){
         List<Ticket> ticketList = new ArrayList<>();
-        for(int i = 0; i < TicketManager.getAvailableTickets().size(); i++){
-            if(TicketManager.getAvailableTickets().get(i).getDate().equals(date)){
-                ticketList.add(TicketManager.getAvailableTickets().get(i));
+        switch (operando) {
+            case OR -> {
+                for (int i = 0; i < TicketManager.getAvailableTickets().size(); i++){
+                    if(TicketManager.getAvailableTickets().get(i).getDate().equals(date1) ||
+                            TicketManager.getAvailableTickets().get(i).getDate().equals(date2)) {
+                        ticketList.add(TicketManager.getAvailableTickets().get(i));
+                    }
+                }
             }
+
+            case AND -> throw new IllegalArgumentException("No tickets available for this filter");
         }
-        return  ticketList;
+        return ticketList;
+
     }
+
     static List<Ticket> filterByPrice(int maxPrice){
         List<Ticket> ticketList = new ArrayList<>();
-        for(int i = 0; i < TicketManager.getAvailableTickets().size(); i++){
-            if(TicketManager.getAvailableTickets().get(i).getPrice() < maxPrice){
-                ticketList.add(TicketManager.getAvailableTickets().get(i));
-            }
+        for(int i = 0; i< TicketManager.getAvailableTickets().size(); i++) {
+            if (TicketManager.getAvailableTickets().get(i).getPrice() <= maxPrice) ticketList.add(TicketManager.getAvailableTickets().get(i));
         }
-        return  ticketList;
+        return ticketList;
     }
 }
 

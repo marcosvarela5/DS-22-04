@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TicketManager {
-    private static final List<Ticket> availableTickets = new ArrayList<>();
+    public static final List<Ticket> availableTickets = new ArrayList<>();
 
-    public void addTicket(Ticket ticket){
+    public static void addTicket(Ticket ticket){
         availableTickets.add(ticket);
     }
 

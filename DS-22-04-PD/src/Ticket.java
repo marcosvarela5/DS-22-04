@@ -37,4 +37,14 @@ public final class Ticket {
         return getPrice() == ticket.getPrice() && getOrigin().equals(ticket.getOrigin()) &&
                 getDestination().equals(ticket.getDestination()) && getDate().equals(ticket.getDate());
     }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "origin='" + origin + '\'' +
+                ", destination='" + destination + '\'' +
+                ", price=" + price +
+                ", date=" + date +
+                '}';
+    }
 }
