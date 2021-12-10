@@ -8,8 +8,9 @@ public interface FilterManager {
         switch (operando) {
             case OR -> {
                 for (int i = 0; i < TicketManager.getAvailableTickets().size(); i++){
-                    if(TicketManager.getAvailableTickets().get(i).getDestination().equals(destination1) ||
-                            TicketManager.getAvailableTickets().get(i).getDestination().equals(destination2)) {
+                    if((TicketManager.getAvailableTickets().get(i).getDestination().equals(destination1) ||
+                            TicketManager.getAvailableTickets().get(i).getDestination().equals(destination2)) &&
+                            (check(TicketManager.getAvailableTickets().get(i)))) {
                         ticketList.add(TicketManager.getAvailableTickets().get(i));
                     }
                 }
@@ -25,8 +26,9 @@ public interface FilterManager {
         switch (operando) {
             case OR -> {
                 for (int i = 0; i < TicketManager.getAvailableTickets().size(); i++){
-                    if(TicketManager.getAvailableTickets().get(i).getOrigin().equals(origin1) ||
-                            TicketManager.getAvailableTickets().get(i).getOrigin().equals(origin2)) {
+                    if((TicketManager.getAvailableTickets().get(i).getOrigin().equals(origin1) ||
+                            TicketManager.getAvailableTickets().get(i).getOrigin().equals(origin2)) &&
+                            (check(TicketManager.getAvailableTickets().get(i)))) {
                         ticketList.add(TicketManager.getAvailableTickets().get(i));
                     }
                 }
@@ -42,8 +44,9 @@ public interface FilterManager {
         switch (operando) {
             case OR -> {
                 for (int i = 0; i < TicketManager.getAvailableTickets().size(); i++){
-                    if(TicketManager.getAvailableTickets().get(i).getDate().equals(date1) ||
-                            TicketManager.getAvailableTickets().get(i).getDate().equals(date2)) {
+                    if((TicketManager.getAvailableTickets().get(i).getDate().equals(date1) ||
+                            TicketManager.getAvailableTickets().get(i).getDate().equals(date2)) &&
+                            (check(TicketManager.getAvailableTickets().get(i)))) {
                         ticketList.add(TicketManager.getAvailableTickets().get(i));
                     }
                 }
@@ -58,9 +61,14 @@ public interface FilterManager {
     static List<Ticket> filterByPrice(int maxPrice){
         List<Ticket> ticketList = new ArrayList<>();
         for(int i = 0; i< TicketManager.getAvailableTickets().size(); i++) {
-            if (TicketManager.getAvailableTickets().get(i).getPrice() <= maxPrice) ticketList.add(TicketManager.getAvailableTickets().get(i));
+            if (TicketManager.getAvailableTickets().get(i).getPrice() <= maxPrice && check(TicketManager.getAvailableTickets().get(i)))
+                ticketList.add(TicketManager.getAvailableTickets().get(i));
         }
         return ticketList;
+    }
+
+    static boolean check(Ticket ticket){
+        return !TicketManager.getAvailableTickets().contains(ticket);
     }
 }
 

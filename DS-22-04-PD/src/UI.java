@@ -10,5 +10,4 @@ public class UI {
         System.out.println(Search.searchTicket("Ourense", Clausula.OR, "Coruña", "París", Clausula.OR, "Madrid",
                 new TicketDate(12, 3,2022), Clausula.OR, new TicketDate(11, 2, 2021), 105).toString());
     }
-
 }
