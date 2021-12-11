@@ -24,4 +24,8 @@ public class TicketDate {
         return day == date.day && month == date.month && year == date.year;
     }
 
+    public String toString(){
+        return this.day + "/" + this.month + "/" + this.year;
+    }
+
 }

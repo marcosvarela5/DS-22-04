@@ -13,6 +13,6 @@ public class Search {
                     ,FilterManager.filterByOrigin(origin1, origin2, op1).stream()).collect(Collectors.toList());
 
         return Stream.concat(list1.stream(), list2.stream()).collect(Collectors.toList());
-        }
     }
+}
 
