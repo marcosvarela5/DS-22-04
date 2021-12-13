@@ -1,3 +1,5 @@
+package e1;
+
 public final class Ticket {
     //Patrón Inmutable (no se pueden cambiar los datos de un billete una vez este es expedido (en nuestro programa, al crear una instancia)
     private final String origin;
@@ -40,7 +42,7 @@ public final class Ticket {
 
     @Override
     public String toString() {
-        return "Ticket{" +
+        return "e1.Ticket{" +
                 "origin='" + origin + '\'' +
                 ", destination='" + destination + '\'' +
                 ", price=" + price +

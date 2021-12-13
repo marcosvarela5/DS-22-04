@@ -1,3 +1,5 @@
+package e1;
+
 public enum Clausula {
     AND("AND"),
     OR("OR");

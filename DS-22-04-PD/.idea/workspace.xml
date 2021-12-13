@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4d7af1a-2d1c-4f45-9617-c3506491f85f" name="Changes" comment="El 1 funciona, utilizando patrón inmutable, hay que adaptarlo todo lo posible también al patrón composición">
+    <list default="true" id="e4d7af1a-2d1c-4f45-9617-c3506491f85f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/DS-22-04.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/e2/Algorythm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/e2/Task.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/e2/TaskManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Search.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TicketDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicketDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clausula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/Clausula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FilterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/FilterManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/Search.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TicketDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/TicketDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TicketManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/TicketManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/UI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +27,6 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -38,24 +46,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../../DS/DS-25-07" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
-  </component>
-  <component name="RunManager">
-    <configuration name="UI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UI" />
-      <module name="DS-22-04-PD" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.UI" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -66,76 +59,13 @@
       <option name="presentableId" value="Default" />
       <updated>1638459543128</updated>
       <workItem from="1638459544514" duration="5000" />
-      <workItem from="1638543356843" duration="36000" />
-      <workItem from="1638543415947" duration="4064000" />
-      <workItem from="1638630911188" duration="2568000" />
-      <workItem from="1638635875199" duration="1361000" />
-      <workItem from="1638713902391" duration="4160000" />
-      <workItem from="1639057717111" duration="964000" />
-      <workItem from="1639070280974" duration="3745000" />
-      <workItem from="1639156164090" duration="1523000" />
-      <workItem from="1639157850376" duration="42000" />
-      <workItem from="1639251741382" duration="233000" />
     </task>
-    <task id="LOCAL-00001" summary="bill class made">
-      <created>1638545385673</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1638545385673</updated>
-    </task>
-    <task id="LOCAL-00002" summary="class Date and Bill defined as final (immutable pattern)">
-      <created>1638631914784</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1638631914784</updated>
-    </task>
-    <task id="LOCAL-00003" summary="implementados los filtros">
-      <created>1638727986834</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1638727986835</updated>
-    </task>
-    <task id="LOCAL-00004" summary="avanzado algo">
-      <created>1639075437797</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1639075437797</updated>
-    </task>
-    <task id="LOCAL-00005" summary="El 1 funciona, utilizando patrón inmutable, hay que adaptarlo todo lo posible también al patrón composición">
-      <created>1639157553885</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1639157553885</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="bill class made" />
-    <MESSAGE value="class Date and Bill defined as final (immutable pattern)" />
-    <MESSAGE value="implementados los filtros" />
-    <MESSAGE value="avanzado algo" />
-    <MESSAGE value="El 1 funciona, utilizando patrón inmutable, hay que adaptarlo todo lo posible también al patrón composición" />
-    <option name="LAST_COMMIT_MESSAGE" value="El 1 funciona, utilizando patrón inmutable, hay que adaptarlo todo lo posible también al patrón composición" />
   </component>
 </project>
