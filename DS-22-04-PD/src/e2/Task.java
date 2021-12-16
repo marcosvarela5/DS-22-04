@@ -1,28 +1,33 @@
 package e2;
+import java.util.ArrayList;
 import java.util.List;
 
-public class Task {
+public class Task implements Comparable <Task>{
 
-    private final String name;
-    public List<String> ancestorList;
-    public List<String> successorList;
-    public boolean available;
-    public boolean completed;
+    private final char name;
+    private final int level;
+    public boolean available = false;
+    public boolean completed = false;
 
-    Task(String name) {
+    Task(char name, int level) {
         this.name = name;
+        this.level = level;
     }
 
-    public String getName() {
+    public char getName() {
         return this.name;
     }
-
-    public List<String> getAncestorList() {
-        return this.ancestorList;
+    public int getLevel(){
+        return this.level;
     }
 
-    public List<String> getSuccessorList() {
-        return this.successorList;
+    @Override
+    public int compareTo(Task o) {
+        return Integer.compare(String.valueOf(this.name).compareTo(String.valueOf(o.name)), 0);
+    }
+
+    public String toString(){
+        return String.valueOf(this.name);
     }
 }
 

@@ -1,18 +1,19 @@
 package e1;
 
-public final class Ticket {
-    //Patrón Inmutable (no se pueden cambiar los datos de un billete una vez este es expedido (en nuestro programa, al crear una instancia)
+import java.util.Objects;
+
+public class Ticket {
+
     private final String origin;
     private final String destination;
+    private final String date;
     private final int price;
-    private final TicketDate date;
 
-
-    Ticket(String origin, String destination, int price, TicketDate date){
+    Ticket(String origin, String destination, String date, int price){
         this.origin = origin;
         this.destination = destination;
-        this.price = price;
         this.date = date;
+        this.price = price;
     }
 
     public String getOrigin() {
@@ -23,12 +24,12 @@ public final class Ticket {
         return destination;
     }
 
-    public int getPrice() {
-        return price;
+    public String getDate() {
+        return date;
     }
 
-    public TicketDate getDate() {
-        return date;
+    public int getPrice() {
+        return price;
     }
 
     @Override
@@ -36,17 +37,16 @@ public final class Ticket {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Ticket ticket = (Ticket) o;
-        return getPrice() == ticket.getPrice() && getOrigin().equals(ticket.getOrigin()) &&
-                getDestination().equals(ticket.getDestination()) && getDate().equals(ticket.getDate());
+        return price == ticket.price && origin.equals(ticket.origin) && destination.equals(ticket.destination) && date.equals(ticket.date);
     }
 
     @Override
     public String toString() {
-        return "e1.Ticket{" +
+        return "Ticket{" +
                 "origin='" + origin + '\'' +
                 ", destination='" + destination + '\'' +
+                ", date='" + date + '\'' +
                 ", price=" + price +
-                ", date=" + date +
                 '}';
     }
 }

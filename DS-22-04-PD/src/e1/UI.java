@@ -1,13 +1,18 @@
 package e1;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UI {
     public static void main(String[] args) {
-        Ticket t1 = new Ticket("Ourense", "Santiago", 100, new TicketDate(12, 3, 2022));
-        Ticket t2 = new Ticket("Coruña", "París", 200, new TicketDate(13, 11, 2023));
-        TicketManager.addTicket(t1);
-        TicketManager.addTicket(t2);
-
-        System.out.println(Search.searchTicket("Ourense", Clausula.OR, "Coruña", "París", Clausula.OR, "Madrid",
-                new TicketDate(12, 3,2022), Clausula.OR, new TicketDate(11, 2, 2021), 105).toString());
+        OR or1 = new OR();
+        OR or2 = new OR();
+        List<Ticket> availableTickets = new ArrayList<>();
+        Ticket t1 = new Ticket("Santiago", "Ourense", "01/01/2021", 200);
+        Ticket t2 = new Ticket("Coruna", "Ferrol", "05/12/2003", 100);
+        availableTickets.add(t1); availableTickets.add(t2);
+        List<Ticket> list1 = AND.filter(or1.filter(new CriteriaDate("01/01/2021"), new CriteriaDate("02/02/2022"), availableTickets),
+                or2.filter(new CriteriaOrigin("Santiago"), new CriteriaOrigin("Roma"), availableTickets));
+        System.out.println(list1);
     }
 }

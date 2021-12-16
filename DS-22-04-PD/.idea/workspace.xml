@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4d7af1a-2d1c-4f45-9617-c3506491f85f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/DS-22-04.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/e2/Algorythm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/e2/Task.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/e2/TaskManager.java" afterDir="false" />
+    <list default="true" id="e4d7af1a-2d1c-4f45-9617-c3506491f85f" name="Changes" comment="task methods implemented">
+      <change afterPath="$PROJECT_DIR$/src/e1/AND.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/e1/Composition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/e1/CriteriaDate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/e1/CriteriaDestination.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/e1/CriteriaOrigin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/e1/CriteriaPrice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/e1/GroupManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/e1/OR.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clausula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/Clausula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FilterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/FilterManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/Search.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TicketDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/TicketDate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TicketManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/TicketManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DS-22-04-PD.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DS-22-04-PD.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/e1/Clausula.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/e1/FilterManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/e1/Search.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/e1/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/e1/TicketDate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/e1/TicketManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/e1/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/e2/Algorythm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e2/Algorythm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/e2/Hierarchy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e2/Hierarchy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/e2/StrongDependencies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e2/StrongDependencies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/e2/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e2/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/e2/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e2/TaskManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/e2/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e2/UI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +59,41 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../../DS/DS-25-07" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="reference.idesettings.debugger.capture" />
+  </component>
+  <component name="RunManager" selected="Application.UI">
+    <configuration name="UI (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="e2.UI" />
+      <module name="DS-22-04-PD" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="e2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="e1.UI" />
+      <module name="DS-22-04-PD" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="e1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.UI" />
+        <item itemvalue="Application.UI (1)" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -59,13 +104,40 @@
       <option name="presentableId" value="Default" />
       <updated>1638459543128</updated>
       <workItem from="1638459544514" duration="5000" />
+      <workItem from="1639568749338" duration="16519000" />
+      <workItem from="1639656708014" duration="10429000" />
     </task>
+    <task id="LOCAL-00001" summary="task methods implemented">
+      <created>1639415358506</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1639415358506</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="task methods implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="task methods implemented" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

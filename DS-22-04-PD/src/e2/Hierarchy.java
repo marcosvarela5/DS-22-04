@@ -6,5 +6,6 @@ public class Hierarchy implements Algorythm {
 
     @Override
     public void order(List<Task> taskList) {
+
     }
 }
