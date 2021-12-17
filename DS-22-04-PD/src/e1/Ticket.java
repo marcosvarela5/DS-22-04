@@ -1,7 +1,5 @@
 package e1;
 
-import java.util.Objects;
-
 public class Ticket {
 
     private final String origin;

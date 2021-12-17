@@ -5,7 +5,7 @@ import java.util.List;
 
 public class UI {
     public static void main(String[] args) {
-        OR or1 = new OR();
+        Composition or1 = new OR();
         OR or2 = new OR();
         List<Ticket> availableTickets = new ArrayList<>();
         Ticket t1 = new Ticket("Santiago", "Ourense", "01/01/2021", 200);

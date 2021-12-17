@@ -2,29 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4d7af1a-2d1c-4f45-9617-c3506491f85f" name="Changes" comment="task methods implemented">
-      <change afterPath="$PROJECT_DIR$/src/e1/AND.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/e1/Composition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/e1/CriteriaDate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/e1/CriteriaDestination.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/e1/CriteriaOrigin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/e1/CriteriaPrice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/e1/GroupManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/e1/OR.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/Class Diagram e1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DS-22-04-PD.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DS-22-04-PD.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e1/Clausula.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e1/FilterManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e1/Search.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/e1/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e1/TicketDate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e1/TicketManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/e1/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e1/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e2/Algorythm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e2/Algorythm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e2/Hierarchy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e2/Hierarchy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e2/StrongDependencies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e2/StrongDependencies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e2/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e2/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e2/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e2/TaskManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/e2/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/e2/UI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,8 +39,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../../DS/DS-25-07" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/doc" />
     <property name="settings.editor.selected.configurable" value="reference.idesettings.debugger.capture" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\DS-22-04\DS-22-04-PD\doc" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\DS-22-04\DS-22-04-PD\doc" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.UI">
     <configuration name="UI (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
